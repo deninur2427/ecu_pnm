@@ -28,3 +28,18 @@ Custom Engine Control Unit for LPG
     - [ ] Injector. Rencana [Tokopedia](https://www.tokopedia.com/sumahonda/injector-assy-fuel-pcx-150-k97-vario-150-esp-16450k59a11)
     - [ ] Pemasangan depan Inlet tanpa klep pengatur udara:
 ![images](images/plan/inlet.jpg)
+
+- [ ] Spark Plug
+    - [ ] Coil. Rencana [Tokopedia](https://www.tokopedia.com/lestarimotor2/coil-koil-scoopy-esp-scoopy-fi-injeksi-30510-k16-a01-asli-ahm)
+    - [ ] Cop Busi [Tokopedia](https://www.tokopedia.com/azkamotor99/canglong-tutup-cop-busi-grand-supra-x-x-125-legenda-revo-kharisma)
+    - [ ] Plug telah tersedia
+![images](images/plan/plug.jpg)
+
+- [ ] Aki. Alternator dan Kiprok tidak ada di Mesin
+    - [x] Charger Aki tersedia
+    - [ ] Jepit Aki dan Wiring nya
+    
+### PCB 
+
+- [ ] Drafting
+- [ ] Rencana Anggaran Total
