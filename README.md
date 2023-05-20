@@ -6,4 +6,5 @@ Custom Engine Control Unit for LPG
 
 ### Input
 
-[ ] Crankshaft Position
+- [ ] Crankshaft Position Sensor
+    - [ ] Pasang Gigi
