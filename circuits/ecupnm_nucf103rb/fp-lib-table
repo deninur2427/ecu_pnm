@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "user")(type "KiCad")(uri "/usr/share/kicad/userlib/footprints/user")(options "")(descr ""))
+)
