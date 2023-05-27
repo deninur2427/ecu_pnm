@@ -14,7 +14,7 @@ Custom Engine Control Unit for LPG
     - [ ] Cetak Crank Teeth 12-1. Diameter Poros 22mm. Contoh:
 
     ![images](images/plan/teeth12m1.png)
-    - [ ] Alternatif akrilik. Desain:
+    - [ ] Alternatif akrilik. Desain (tebal 2mm atau 3mm):
 
     ![images](parts/cranktooth/crankteeth_v0.png)
     - [ ] Pasang Sensor Gigi. Rencana Sensor: Opto Interruptor: [Tokopedia](https://www.tokopedia.com/xurve-store/fc-03-ir-infrared-speed-kecepatan-sensor-photo-opto-interruptor)
