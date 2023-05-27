@@ -44,6 +44,7 @@ Custom Engine Control Unit for LPG
 - [ ] Drafting
     - [ ] Single Cylinder
         - [ ] Standalone PCB
-        - [ ] Nucleo Based
-            - [ ] F103RB
+        - [x] Nucleo Based
+            - [x] F103RB
+![images](images/progress/ecupnm_nucf103rb.png)
 - [ ] Rencana Anggaran Total
