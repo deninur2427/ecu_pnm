@@ -1,0 +1,6 @@
+Makefile
+compile_commands.json
+.qmake.stash
+.cache/
+*.pro.user
+build/
