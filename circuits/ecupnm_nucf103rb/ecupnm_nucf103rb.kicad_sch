@@ -1080,6 +1080,35 @@
         )
       )
     )
+    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+      (property "Reference" "H" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "MountingHole" (at 0 3.175 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "mounting hole" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "MountingHole_0_1"
+        (circle (center 0 0) (radius 1.27)
+          (stroke (width 1.27) (type default))
+          (fill (type none))
+        )
+      )
+    )
     (symbol "NUCLEO-64:NUCLEO-64" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 29.21 0)
         (effects (font (size 1.27 1.27)))
@@ -2107,6 +2136,7 @@
   (no_connect (at 92.71 76.2) (uuid 7d1eaacc-1c0f-4437-89ab-5b1e38771c5b))
   (no_connect (at 130.81 55.88) (uuid 82850b36-d2d9-4443-bb1b-3c572264b41f))
   (no_connect (at 92.71 66.04) (uuid 8311ce5b-9026-41a6-aac0-2620bb5da5c8))
+  (no_connect (at 92.71 71.12) (uuid 8431666a-3ca1-4876-9688-30f4acafdb44))
   (no_connect (at 31.75 81.28) (uuid 8bf13b49-a2f9-46ed-9805-137b92663d96))
   (no_connect (at 92.71 86.36) (uuid 92d481e4-1200-4203-91a2-53614666a171))
   (no_connect (at 266.7 111.76) (uuid 9b285174-6821-41ff-a241-71c21005d20e))
@@ -2393,7 +2423,7 @@
     (stroke (width 0) (type default))
     (uuid 827f7e6f-8690-4a4f-9a35-c9de8b6275d1)
   )
-  (wire (pts (xy 33.02 110.49) (xy 35.56 110.49))
+  (wire (pts (xy 33.02 115.57) (xy 35.56 115.57))
     (stroke (width 0) (type default))
     (uuid 8769938c-f3a2-4d73-a90c-18e6af4c6021)
   )
@@ -2465,7 +2495,7 @@
     (stroke (width 0) (type default))
     (uuid a24c0da5-8b65-494e-bcf4-36d34570339b)
   )
-  (wire (pts (xy 33.02 107.95) (xy 35.56 107.95))
+  (wire (pts (xy 33.02 113.03) (xy 35.56 113.03))
     (stroke (width 0) (type default))
     (uuid a2d41cab-07a0-4ee2-ada8-1ef60eef17dd)
   )
@@ -2598,12 +2628,17 @@
     (uuid feb50e66-06a9-4cdc-9077-dad681600a18)
   )
 
+  (rectangle (start 57.15 166.37) (end 100.33 186.69)
+    (stroke (width 0) (type dash))
+    (fill (type none))
+    (uuid 394e2c18-b359-4497-9747-269aea81221b)
+  )
   (rectangle (start 195.58 83.82) (end 273.05 154.94)
     (stroke (width 0.1) (type dash))
     (fill (type none))
     (uuid 5cd58bfd-00b0-4e0c-9e5d-fc65ac14cc94)
   )
-  (rectangle (start 22.86 101.6) (end 113.03 160.02)
+  (rectangle (start 22.86 101.6) (end 100.33 160.02)
     (stroke (width 0.1) (type dash))
     (fill (type none))
     (uuid 5fd8b862-a914-4b08-90ac-de3844995878)
@@ -2629,6 +2664,10 @@
     (uuid bbbb6132-b2c2-4bce-b527-0eb545b0fb63)
   )
 
+  (text "Mount Holes\n" (at 80.01 185.42 0)
+    (effects (font (size 2 2) (thickness 0.254) bold) (justify left bottom))
+    (uuid 1aa8f186-7df2-4204-a6fa-c5e10bdb8dba)
+  )
   (text "NUCLEO64\n" (at 132.08 95.25 0)
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid 3645aff5-039a-411f-856d-1136cfc79293)
@@ -2645,7 +2684,7 @@
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid 934c5235-5352-4eff-8ac6-573e095bf839)
   )
-  (text "PULSER\n" (at 99.06 157.48 0)
+  (text "PULSER\n" (at 87.63 158.75 0)
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid e3b8ab81-8bba-41b7-8835-02abf2e4bf5a)
   )
@@ -2710,24 +2749,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "LED_NOCKP" (shape input) (at 92.71 71.12 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 4f9967f6-662c-4a1f-ab33-fa3ec8524245)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 78.9185 71.12 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
   (global_label "OUT_INJ" (shape input) (at 130.81 45.72 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 531c143b-1492-490a-816d-457ded197c1b)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 141.2149 45.72 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "IN_PULSE" (shape input) (at 82.55 130.81 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 57a1a953-5931-4350-8e9f-655d79f7c3e8)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 94.3458 130.81 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2787,13 +2812,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "IN_TPS" (shape input) (at 132.08 165.1 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d0f48255-d2ce-4130-b93a-d93014a89502)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 140.8431 165.0206 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "PORT_IGN" (shape input) (at 257.81 53.34 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid e21d1475-d44f-4da9-87d4-9774f67f08e0)
@@ -2801,24 +2819,17 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "PULSER" (shape input) (at 82.55 140.97 0) (fields_autoplaced)
+  (global_label "PULSER" (shape input) (at 83.82 139.7 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid f0784689-727e-48ec-ad81-1564ecf55be4)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 92.7129 140.97 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 93.9829 139.7 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "LED_NOCKP" (shape input) (at 104.14 127 270) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid f52d0ab3-af1a-49ba-bcc1-9469cc5d27a2)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 104.14 140.7915 90)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "PULSER" (shape input) (at 35.56 107.95 0) (fields_autoplaced)
+  (global_label "PULSER" (shape input) (at 35.56 113.03 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid feba37ab-f768-4ce4-930f-ee75dac2a264)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 45.7229 107.95 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 45.7229 113.03 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2826,7 +2837,7 @@
   (symbol (lib_name "+12V_1") (lib_id "power:+12V") (at 198.12 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00e29a2f-be67-4440-92cc-eb1f726d1128)
-    (property "Reference" "#PWR030" (at 198.12 44.45 0)
+    (property "Reference" "#PWR024" (at 198.12 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 198.12 36.83 0)
@@ -2842,7 +2853,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -2889,7 +2900,7 @@
     (property "Value" "100uF" (at 185.42 115.57 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_Elec_4x5.4" (at 178.1048 114.3 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D7.5mm_P2.50mm" (at 178.1048 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 179.07 118.11 0)
@@ -2946,7 +2957,7 @@
   (symbol (lib_id "Device:C") (at 134.62 63.5 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 122cc36b-4fc8-4425-9312-cf977b8486d1)
-    (property "Reference" "C5" (at 134.62 59.69 90)
+    (property "Reference" "C2" (at 134.62 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 138.43 62.23 90)
@@ -2963,7 +2974,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "C5") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -3028,7 +3039,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -3064,27 +3075,49 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 77.47 130.81 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 60.96 170.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 2269f0ac-96af-43d3-8d9e-48d5004102ab)
-    (property "Reference" "J2" (at 78.105 129.54 0)
-      (effects (font (size 1.27 1.27)))
+    (uuid 1dcef1e0-fabb-4f7b-934e-c2af10c41737)
+    (property "Reference" "H1" (at 63.5 169.545 0)
+      (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Conn_01x02_Pin" (at 78.105 129.54 0)
+    (property "Value" "MountingHole" (at 63.5 172.085 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.5mm" (at 60.96 170.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 77.47 130.81 0)
+    (property "Datasheet" "~" (at 60.96 170.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 77.47 130.81 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid cca29c00-c1c9-418e-a7af-3c32bd195ee0))
-    (pin "2" (uuid 4a46c904-26c8-4a6b-8b47-83c267264391))
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "J2") (unit 1)
+          (reference "H1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 81.28 176.53 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 21b407fe-bcbf-4277-a6d8-730e24acd8dd)
+    (property "Reference" "H4" (at 83.82 175.895 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (at 83.82 178.435 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.5mm" (at 81.28 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 81.28 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "ecupnm_nucf103rb"
+        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
+          (reference "H4") (unit 1)
         )
       )
     )
@@ -3114,7 +3147,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -3145,7 +3178,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R6") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -3205,7 +3238,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR011") (unit 1)
         )
       )
     )
@@ -3236,7 +3269,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R7") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -3251,7 +3284,7 @@
     (property "Value" "100uF" (at 134.62 120.65 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4" (at 141.9352 121.92 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D7.5mm_P2.50mm" (at 141.9352 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 140.97 118.11 0)
@@ -3297,7 +3330,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR016") (unit 1)
         )
       )
     )
@@ -3362,7 +3395,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -3401,7 +3434,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Pin") (at 125.73 151.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3dd75d3d-459f-4cc3-a949-d33c54d3127f)
-    (property "Reference" "JT1" (at 126.365 147.32 0)
+    (property "Reference" "JT3" (at 126.365 147.32 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x03_Pin" (at 126.365 147.32 0)
@@ -3419,7 +3452,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "JT1") (unit 1)
+          (reference "JT3") (unit 1)
         )
       )
     )
@@ -3449,7 +3482,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -3536,7 +3569,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R10") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -3574,40 +3607,10 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 82.55 133.35 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 55f56ee0-5a97-4c23-bbc1-26101417fff1)
-    (property "Reference" "#PWR?" (at 88.9 133.35 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 86.36 133.985 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "" (at 82.55 133.35 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 82.55 133.35 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid dea4ac3b-c76b-4a35-95ae-56e5b828a425))
-    (instances
-      (project "basic_f051r8"
-        (path "/6c6cfcbd-b1ea-481d-8b10-e91c1ecfccb2"
-          (reference "#PWR?") (unit 1)
-        )
-      )
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR018") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:VCC") (at 69.85 48.26 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 56a17408-3ad6-4f01-99d8-cf5f220663ff)
-    (property "Reference" "#PWR09" (at 66.04 48.26 0)
+    (property "Reference" "#PWR05" (at 66.04 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VCC" (at 73.66 48.895 90)
@@ -3623,7 +3626,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -3653,7 +3656,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -3662,7 +3665,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Pin") (at 123.19 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5dce2800-9a5e-424b-9e51-680044f60e0b)
-    (property "Reference" "JT3" (at 123.825 107.95 0)
+    (property "Reference" "JT2" (at 123.825 107.95 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02_Pin" (at 123.825 107.95 0)
@@ -3679,7 +3682,31 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "JT3") (unit 1)
+          (reference "JT2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 60.96 176.53 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 62c86391-b260-4342-beb3-6f4f63ea17da)
+    (property "Reference" "H2" (at 63.5 175.895 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (at 63.5 178.435 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.5mm" (at 60.96 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 60.96 176.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "ecupnm_nucf103rb"
+        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
+          (reference "H2") (unit 1)
         )
       )
     )
@@ -3714,7 +3741,31 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "U6") (unit 1)
+          (reference "U5") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 81.28 170.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 654eb963-1980-49fc-9cfd-47c8a1d6e80e)
+    (property "Reference" "H3" (at 83.82 169.545 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (at 83.82 172.085 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.5mm" (at 81.28 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 81.28 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "ecupnm_nucf103rb"
+        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
+          (reference "H3") (unit 1)
         )
       )
     )
@@ -3745,7 +3796,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R13") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -3776,25 +3827,25 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R3") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "power:VCC") (at 82.55 138.43 270) (unit 1)
+  (symbol (lib_id "power:VCC") (at 83.82 137.16 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6aee4779-8264-4d8a-a610-069e1240de33)
-    (property "Reference" "#PWR?" (at 78.74 138.43 0)
+    (property "Reference" "#PWR?" (at 80.01 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "VCC" (at 86.36 139.065 90)
+    (property "Value" "VCC" (at 87.63 137.795 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 82.55 138.43 0)
+    (property "Footprint" "" (at 83.82 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 82.55 138.43 0)
+    (property "Datasheet" "" (at 83.82 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a116c899-009b-4c0e-93cd-e690d4e941d2))
@@ -3806,7 +3857,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -3912,19 +3963,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Pin") (at 77.47 140.97 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Pin") (at 78.74 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6f25db6e-a035-4762-bdcf-7c6531d475e2)
-    (property "Reference" "J3" (at 78.105 137.16 0)
+    (property "Reference" "J1" (at 79.375 135.89 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x03_Pin" (at 78.105 137.16 0)
+    (property "Value" "Conn_01x03_Pin" (at 79.375 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 77.47 140.97 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 78.74 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 77.47 140.97 0)
+    (property "Datasheet" "~" (at 78.74 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid dc4184bd-50a1-41c4-a6c0-b518853f3a87))
@@ -3933,7 +3984,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "J3") (unit 1)
+          (reference "J1") (unit 1)
         )
       )
     )
@@ -3963,7 +4014,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -3994,7 +4045,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "C1") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -4062,7 +4113,7 @@
   (symbol (lib_id "power:VDD") (at 69.85 60.96 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 824b3d6a-f3af-40bf-85c0-43c3d169a77a)
-    (property "Reference" "#PWR08" (at 66.04 60.96 0)
+    (property "Reference" "#PWR07" (at 66.04 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 73.66 61.595 90)
@@ -4078,7 +4129,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -4108,7 +4159,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -4139,7 +4190,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R14") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -4169,7 +4220,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -4178,7 +4229,7 @@
   (symbol (lib_id "Connector:USB_B_Mini") (at 205.74 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 94783eae-2253-4ddd-997a-895e5fd836ec)
-    (property "Reference" "J4" (at 205.74 97.79 0)
+    (property "Reference" "J2" (at 205.74 97.79 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "USB_B_Mini" (at 205.74 100.33 0)
@@ -4199,51 +4250,25 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "J4") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 127 165.1 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 9e224126-3c08-420a-b519-0fcaa95cc9c0)
-    (property "Reference" "J1" (at 127.635 163.83 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "Conn_01x02_Pin" (at 127.635 163.83 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 127 165.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 127 165.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 193a6dfb-9a49-4e31-929f-c3a68b583fb3))
-    (pin "2" (uuid 1929107b-9886-48c0-9354-3aac1dce38f7))
-    (instances
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "J1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 82.55 143.51 90) (unit 1)
+  (symbol (lib_id "power:GND") (at 83.82 142.24 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a4c30df5-ee7f-4f16-88bb-90efea29b485)
-    (property "Reference" "#PWR?" (at 88.9 143.51 0)
+    (property "Reference" "#PWR?" (at 90.17 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 86.36 144.145 90)
+    (property "Value" "GND" (at 87.63 142.875 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 82.55 143.51 0)
+    (property "Footprint" "" (at 83.82 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 82.55 143.51 0)
+    (property "Datasheet" "" (at 83.82 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 187b5a86-30e0-4771-ab11-4b0358c92b22))
@@ -4255,7 +4280,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -4286,7 +4311,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R1") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -4317,7 +4342,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "C4") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -4326,7 +4351,7 @@
   (symbol (lib_id "Device:R") (at 134.62 68.58 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid af78d2e7-c59d-48a8-9bc0-c38ca38e9c5a)
-    (property "Reference" "R8" (at 134.62 71.12 90)
+    (property "Reference" "R6" (at 134.62 71.12 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0" (at 134.62 68.58 90)
@@ -4343,7 +4368,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R8") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -4373,7 +4398,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -4404,7 +4429,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R12") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -4459,7 +4484,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -4490,7 +4515,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R2") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -4520,7 +4545,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -4605,7 +4630,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "U5") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -4614,7 +4639,7 @@
   (symbol (lib_id "power:GND") (at 140.97 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c6c77dc2-b9f7-46fe-af16-287a0036fa4d)
-    (property "Reference" "#PWR024" (at 147.32 66.04 0)
+    (property "Reference" "#PWR017" (at 147.32 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 144.78 66.675 90)
@@ -4630,7 +4655,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
     )
@@ -4711,7 +4736,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -4742,59 +4767,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R11") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Device:R") (at 104.14 115.57 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid d7dd12b0-0e6c-4c76-a586-f824350c3812)
-    (property "Reference" "R9" (at 106.68 115.57 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "220" (at 104.14 116.84 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" (at 102.362 115.57 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 104.14 115.57 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid f3d5b524-4f01-42b6-bd15-c3bdd826414c))
-    (pin "2" (uuid ec5caa1f-421b-4c9d-b2f7-7e9d8fe23629))
-    (instances
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R9") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Device:LED") (at 104.14 123.19 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid dcb5c984-3898-45b2-bc20-9e136b67cd03)
-    (property "Reference" "D3" (at 107.95 124.1425 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Value" "LED" (at 107.95 126.6825 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" (at 104.14 123.19 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 104.14 123.19 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 14134c5a-718f-429d-9eb2-4448004bd4d7))
-    (pin "2" (uuid 49475beb-3433-4b6e-8462-ed1e654f878f))
-    (instances
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "D3") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -4803,7 +4776,7 @@
   (symbol (lib_id "power:GND") (at 69.85 50.8 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e1ed5d1b-8f1c-4743-a899-2e93434d86a7)
-    (property "Reference" "#PWR07" (at 76.2 50.8 0)
+    (property "Reference" "#PWR06" (at 76.2 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 73.66 51.435 90)
@@ -4819,7 +4792,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR06") (unit 1)
         )
       )
     )
@@ -4828,7 +4801,7 @@
   (symbol (lib_name "+12V_1") (lib_id "power:+12V") (at 255.27 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e850aa31-5522-4e33-8bcb-726398d4afaf)
-    (property "Reference" "#PWR036" (at 255.27 44.45 0)
+    (property "Reference" "#PWR033" (at 255.27 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 255.27 36.83 0)
@@ -4844,7 +4817,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
     )
@@ -4875,7 +4848,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R15") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -4905,7 +4878,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -4935,7 +4908,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -5041,61 +5014,6 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 132.08 167.64 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid f37b1940-6d58-4a24-bb26-2df848f6c1cb)
-    (property "Reference" "#PWR?" (at 138.43 167.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 135.89 168.275 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "" (at 132.08 167.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 132.08 167.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 0314044f-aa44-4983-bc12-bfcb1d7c9995))
-    (instances
-      (project "basic_f051r8"
-        (path "/6c6cfcbd-b1ea-481d-8b10-e91c1ecfccb2"
-          (reference "#PWR?") (unit 1)
-        )
-      )
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR03") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:VDD") (at 104.14 111.76 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid f55b2093-a3f6-44ed-b31b-018514527786)
-    (property "Reference" "#PWR023" (at 104.14 115.57 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VDD" (at 104.14 107.95 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 104.14 111.76 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 104.14 111.76 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid a1dafac8-927e-43b1-9b7b-a0dfffcc5f33))
-    (instances
-      (project "ecupnm_nucf103rb"
-        (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR023") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "Device:R") (at 52.07 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f6aac941-8703-41d4-ba25-eb08c330eabe)
@@ -5121,25 +5039,25 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R5") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "power:GND") (at 35.56 110.49 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 35.56 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f77c290d-4251-4633-afd5-ae7770281fa7)
-    (property "Reference" "#PWR?" (at 35.56 116.84 0)
+    (property "Reference" "#PWR?" (at 35.56 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 35.56 115.57 0)
+    (property "Value" "GND" (at 35.56 120.65 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 35.56 110.49 0)
+    (property "Footprint" "" (at 35.56 115.57 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 35.56 110.49 0)
+    (property "Datasheet" "" (at 35.56 115.57 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid b916310e-34c6-4792-afd5-f5e15b7b1400))
@@ -5151,7 +5069,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -5182,25 +5100,25 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "R4") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 27.94 107.95 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 27.94 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fb712b47-f16c-494c-9096-6bc644739b72)
-    (property "Reference" "JT2" (at 28.575 106.68 0)
+    (property "Reference" "JT1" (at 28.575 111.76 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x02_Pin" (at 28.575 106.68 0)
+    (property "Value" "Conn_01x02_Pin" (at 28.575 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (at 27.94 107.95 0)
+    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (at 27.94 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 27.94 107.95 0)
+    (property "Datasheet" "~" (at 27.94 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 28d5619d-1cf1-4e11-9120-b6e7856a36ac))
@@ -5208,7 +5126,7 @@
     (instances
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "JT2") (unit 1)
+          (reference "JT1") (unit 1)
         )
       )
     )
@@ -5269,7 +5187,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "C2") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -5299,7 +5217,7 @@
       )
       (project "ecupnm_nucf103rb"
         (path "/a95c40d2-28a2-42a3-a80e-cd56e62e49d6"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )

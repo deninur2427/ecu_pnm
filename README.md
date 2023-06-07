@@ -16,7 +16,7 @@ Custom Engine Control Unit for LPG
     ![images](images/plan/teeth12m1.png)
     - [ ] Alternatif akrilik. Desain (tebal 2mm atau 3mm) untuk 24-1:
 
-    ![images](parts/cranktooth/crankteeth_v1.png)
+    ![images](parts/cranktooth/24m1/crankteeth_v1.png)
     - [ ] Pasang Sensor Gigi. Rencana Sensor: Opto Interruptor: [Tokopedia](https://www.tokopedia.com/xurve-store/fc-03-ir-infrared-speed-kecepatan-sensor-photo-opto-interruptor)
 
 - [ ] Trottle Position Sensor
@@ -52,4 +52,4 @@ Custom Engine Control Unit for LPG
         - [x] Nucleo Based
             - [x] F103RB
 ![images](images/progress/ecupnm_nucf103rb.png)
-- [ ] Rencana Anggaran Total
+- [x] Rencana Anggaran Total
