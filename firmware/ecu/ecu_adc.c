@@ -6,10 +6,7 @@
  * @{
  */
 
-#include "ch.h"
-#include "hal.h"
-
-#include "ecu_adc.h"
+#include "ecu_includes.h"
 
 static adcsample_t samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 

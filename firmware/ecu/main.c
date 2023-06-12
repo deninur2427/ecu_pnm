@@ -1,3 +1,11 @@
+/**
+ * @file main.c
+ * @brief Main Entry Program
+ *
+ * @addtogroup MAIN
+ * @{
+ */
+
 /*
     ChibiOS - Copyright (C) 2006..2018 Giovanni Di Sirio
 
@@ -14,11 +22,7 @@
     limitations under the License.
 */
 
-#include "ch.h"
-#include "hal.h"
-
-#include "ecu_gpio.h"
-#include "ecu_adc.h"
+#include "ecu_includes.h"
 
 /*
  * Application entry point.
@@ -28,9 +32,11 @@ int main(void) {
   chSysInit();
 
   ecu_GPIO_Init();
-  ecu_ADC_Init();
 
   while (true) {
     chThdSleepMilliseconds(500);
   }
 }
+
+/**  @} */
+
