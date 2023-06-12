@@ -32,6 +32,8 @@ int main(void) {
   chSysInit();
 
   ecu_GPIO_Init();
+  ecu_ADC_Init();
+  ecu_MEM_Init();
 
   while (true) {
     chThdSleepMilliseconds(500);

@@ -6,10 +6,7 @@
  * @{
  */
 
-#include "ch.h"
-#include "hal.h"
-
-#include "ecu_gpio.h"
+#include "ecu_includes.h"
 
 static THD_WORKING_AREA(waThread1, 128);
 static THD_FUNCTION(Thread1, arg) {

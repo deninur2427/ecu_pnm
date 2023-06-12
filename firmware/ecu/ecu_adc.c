@@ -15,7 +15,9 @@ uint32_t sum_adc_tps;
 
 adcsample_t adc_tps_close, adc_tps_full;
 
-void adc_cb(ADCDriver *adcp){
+void adc_cb(ADCDriver *adcp, adcsample_t *buffer, size_t n){
+    (void) buffer;
+    (void) n;
     uint8_t i;
 
     if(adcp->state == ADC_COMPLETE){
