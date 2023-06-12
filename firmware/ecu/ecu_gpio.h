@@ -9,7 +9,10 @@
 #ifndef _ECU_GPIO_H_
 #define _ECU_GPIO_H_
 
-#define CKP_LED 5
+/**
+ * @brief PickUp signal LED
+ */
+#define CKP_LED     5
 
 /**
  * @brief Output IO Port

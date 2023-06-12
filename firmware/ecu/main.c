@@ -18,6 +18,7 @@
 #include "hal.h"
 
 #include "ecu_gpio.h"
+#include "ecu_adc.h"
 
 /*
  * Application entry point.
@@ -27,6 +28,7 @@ int main(void) {
   chSysInit();
 
   ecu_GPIO_Init();
+  ecu_ADC_Init();
 
   while (true) {
     chThdSleepMilliseconds(500);
