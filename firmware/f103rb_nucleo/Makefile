@@ -83,7 +83,7 @@ endif
 #
 
 # Define project name here
-PROJECT = ch
+PROJECT = ecu
 
 # Imported source files and paths
 CHIBIOS = /opt/stm32chlib/chibios3

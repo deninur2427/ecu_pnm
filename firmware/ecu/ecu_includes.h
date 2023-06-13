@@ -22,11 +22,13 @@
 #include "ecu_adc.h"
 #include "ecu_gpio.h"
 #include "ecu_mem.h"
+#include "ecu_icu.h"
+#include "ecu_engine.h"
+
+#define assert_param(expr) ((void)0)
 
 #include "stm32f10x_flash.h"
 #include "stm32f10x_eeprom.h"
-
-#define assert_param(expr) ((void)0)
 
 #endif
 
