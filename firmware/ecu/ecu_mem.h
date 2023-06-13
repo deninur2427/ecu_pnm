@@ -48,6 +48,39 @@ uint16_t ecu_MEM_Read(uint16_t addr);
  */
 void ecu_MEM_Save(uint16_t addr, uint16_t data);
 
+/**
+ * @brief ADC Data Save/Load
+ * @param Mode for Read/Write
+ */
+void ecu_MEM_Adc(uint8_t rw);
+
+/**
+ * @brief Injection Timing Data Save/Load
+ * @param Mode for Read/Write
+ */
+void ecu_MEM_InjTiming(uint8_t rw);
+
+/**
+ * @brief Injection Tabel
+ * @param TPS index
+ * @param RPM index
+ * @param Mode for Read/Write
+ */
+void ecu_MEM_InjData(uint8_t idx_tps, uint8_t idx_rpm, uint8_t rw);
+
+/**
+ * @brief Ignition Tabel
+ * @param TPS index
+ * @param RPM index
+ * @param Mode for Read/Write
+ */
+void ecu_MEM_IgnData(uint8_t idx_tps, uint8_t idx_rpm, uint8_t rw);
+
+/**
+ * @brief Load all data from Non-Volatile Memory to Volatile Memory
+ */
+void ecu_MEM_LoadAll(void);
+
 #endif
 
 /**  @} */

@@ -184,7 +184,18 @@ void ecu_ENG_DataSend(void){
     chprintf(
         (BaseSequentialStream *)&SD1,
         "%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,0\r\n",
-        rpm,adc_tps,inj_ms_perc,inj_ms_tick,ign_off_deg,ign_off_tick,one_deg_tick,id_rpm,id_tps,inj_open_time,inj_ms_base
+        rpm,
+        adc_tps,
+        inj_ms_perc,
+        inj_ms_tick,
+        ign_off_deg,
+        ign_off_tick,
+        one_deg_tick,
+        id_rpm,
+        id_tps,
+        inj_open_time,
+        inj_ms_base
+        // adc_clt
     );
 }
 

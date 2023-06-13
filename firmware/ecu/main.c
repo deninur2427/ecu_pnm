@@ -33,6 +33,7 @@ int main(void) {
 
   ecu_MEM_Init();
   ecu_GPIO_Init();
+  ecu_ICU_Init();
   ecu_ADC_Init();
   ecu_GPT_Init();
 

@@ -12,6 +12,12 @@
 #define F_ICU   100000
 
 /**
+ * @brief Input Capture Pin
+ * @details Timer 3 Channel 2 on GPIOA pin 7
+ */
+#define CKP_PIN 7
+
+/**
  * @brief Input Capture Initialization
  */
 void ecu_ICU_Init(void);
