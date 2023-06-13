@@ -34,14 +34,37 @@
  * @brief Degree of each engine tooth
  * @details Simetrically 360/24= 15
  */
-#define ENGINE_ALL_DEGREE   15
+#define ENGINE_DEGREE_TOOTH 15
 
 /**
  * @brief Engine Data Matrix size in memory
  */
 #define ENGINE_CDATA        12
 
-void ecu_ENG_InjIgn(void);
+/**
+ * @brief Engine Crankshaft Tooth Calculation
+ */
+void ecu_ENG_ToothCalc(void);
+
+/**
+ * @brief Engine Injection and Ignition Calculation
+ */
+void ecu_ENG_InjIgnCalc(void);
+
+/**
+ * @brief Engine Injection and Ignition Control
+ */
+void ecu_ENG_InjIgnControl(void);
+
+/**
+ * @brief Engine Overflow status function
+ */
+void ecu_ENG_Overflow(void);
+
+/**
+ * @brief Send Engine Data through Serial Interface
+ */
+void ecu_ENG_DataSend(void);
 
 #endif
 

@@ -5,12 +5,15 @@ ecu/ecu_engine.c
 ecu/ecu_engine.h
 ecu/ecu_gpio.c
 ecu/ecu_gpio.h
+ecu/ecu_gpt.c
+ecu/ecu_gpt.h
 ecu/ecu_icu.c
 ecu/ecu_icu.h
 ecu/ecu_includes.h
 ecu/ecu_mem.c
 ecu/ecu_mem.h
 ecu/main.c
+f103rb_nucleo/Makefile
 f103rb_nucleo/board/board.c
 f103rb_nucleo/board/board.h
 f103rb_nucleo/board/board.mk

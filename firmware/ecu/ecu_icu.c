@@ -1,6 +1,6 @@
 /**
  * @file ecu_icu.c
- * @brief Input Capture code
+ * @brief Input Capture Unit code
  *
  * @addtogroup ICU
  * @{

@@ -9,6 +9,8 @@
 #ifndef _ECU_GPIO_H_
 #define _ECU_GPIO_H_
 
+#include "hal.h"
+
 /**
  * @brief PickUp signal LED
  */
@@ -33,6 +35,12 @@
  * @brief No PickUp signal received indicator
  */
 #define NO_CKP()    palTogglePad(GPIOA, CKP_LED)
+
+// Engine Output declaration functions
+#define ecu_ENG_Inj_ON()    palSetPad(OUT_PORT,OUT_INJ)
+#define ecu_ENG_Inj_OFF()   palClearPad(OUT_PORT,OUT_INJ)
+#define ecu_ENG_Ign_ON()    palSetPad(OUT_PORT,OUT_IGN)
+#define ecu_ENG_Ign_OFF()   palClearPad(OUT_PORT,OUT_IGN)
 
 /**
  * @brief ECU GPIO Initialization

@@ -58,6 +58,136 @@ adcsample_t adc_tps_close=195,adc_tps_full=1395;
 uint16_t inj_ms_base=5,inj_open_time=200;
 #endif
 
+uint16_t data_tps[ENGINE_CDATA]={0,10,15,20,30,40,50,60,70,80,90,100};
+uint16_t data_rpm[ENGINE_CDATA]={500,750,1000,1250,1500,2000,2500,3000,4000,5000,6000,7000};
+
+uint16_t inj_ms_perc,inj_ms_tick;
+uint16_t ign_off_deg,ign_off_deg_out,ign_off_tick;
+uint16_t one_deg_tick;
+
+uint8_t rpm_index,tps_index;
+
+void ecu_ENG_ToothCalc(void){
+    // get period comparisson in percent
+    if(last_period > 0){
+        misstooth = (prev_last_period*100) / last_period;
+        prev_last_period = last_period;
+    }
+
+    // if period percent approximately 50% (half than previous)
+    // reset the toothcount
+    // or else increment the toothcount
+    if((misstooth>40) && (misstooth<50)){
+        toothcount = 0;
+    }
+    else{
+        frequency = F_ICU / last_period;
+        rpm = frequency*60 / (ENGINE_ALL_TOOTH + 1);
+
+        one_deg_tick = last_period / ENGINE_DEGREE_TOOTH;
+
+        toothcount++;
+    }
+
+    // some guarding in case reset tooth failed
+    if(toothcount==ENGINE_ALL_TOOTH+1) toothcount=0;
+    if(toothcount==ENGINE_ALL_TOOTH+2) toothcount=1;
+}
+
+void ecu_ENG_InjIgnCalc(void){
+    uint8_t i;
+
+    ///////////////////////////////////////////////////
+    // selecting rpm index in rpm array
+
+    for(i=0;i<ENGINE_CDATA-2;i++){
+        if((rpm>=data_rpm[i]) && (rpm<data_rpm[i+1])){
+            rpm_index = i;
+        }
+    }
+
+    if(rpm<data_rpm[0]) rpm_index = 0;
+    if(rpm>=data_rpm[ENGINE_CDATA-1]) rpm_index = ENGINE_CDATA-1;
+
+    //////////////////////////////////////////////////
+    // selecting tps index in tps array
+
+    for(i=0;i<ENGINE_CDATA-2;i++){
+        if((adc_tps>=data_tps[i]) && (adc_tps<data_tps[i+1])){
+            tps_index = i;
+        }
+    }
+
+    if(adc_tps<data_tps[0]) tps_index = 0;
+    if(adc_tps>=data_tps[ENGINE_CDATA-1]) tps_index = ENGINE_CDATA-1;
+
+    //////////////////////////////////////////////////
+    // Allocate actual matrix value
+
+    id_tps = tps_index;
+    id_rpm = rpm_index;
+
+    inj_ms_perc = inj_data_ms_perc[tps_index][rpm_index];
+    ign_off_deg = ign_data_off_deg[tps_index][rpm_index];
+
+    // Injection Timing
+    inj_ms_tick = (inj_ms_perc * inj_ms_base) + inj_open_time;
+
+    // Ignition Timing
+    // 31 came from two teeth range span (30 degree)
+    ign_off_deg_out = 31 - ign_off_deg;
+    ign_off_tick = ign_off_deg_out * one_deg_tick;
+}
+
+void ecu_ENG_InjIgnControl(void){
+
+    ////////////////////////////////////////////////
+    // Injection Control
+
+    if(toothcount==ENGINE_TOOTH_INTAKE_OPEN){
+        ecu_ENG_Inj_ON();
+
+        chSysLockFromISR();
+        gptStartOneShotI(&GPTD1,inj_ms_tick);
+        chSysUnlockFromISR();
+    }
+
+    if(toothcount==ENGINE_TOOTH_INTAKE_CLOSE){
+        ecu_ENG_Inj_OFF();
+    }
+
+    ////////////////////////////////////////////////
+    // Ignition Control
+
+    if(toothcount==ENGINE_TOOTH_COIL_ON){
+        ecu_ENG_Ign_ON();
+    }
+
+    if(toothcount==ENGINE_TOOTH_COIL_OFF){
+        chSysLockFromISR();
+        gptStartOneShotI(&GPTD4, ign_off_tick);
+        chSysUnlockFromISR();
+    }
+}
+
+void ecu_ENG_Overflow(void){
+    NO_CKP();
+    frequency = 0;
+    rpm = 0;
+    misstooth = 0;
+
+    ecu_ENG_Inj_OFF();
+    ecu_ENG_Ign_OFF();
+}
+
+void ecu_ENG_DataSend(void){
+    chprintf(
+        (BaseSequentialStream *)&SD1,
+        "%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,0\r\n",
+        rpm,adc_tps,inj_ms_perc,inj_ms_tick,ign_off_deg,ign_off_tick,one_deg_tick,id_rpm,id_tps,inj_open_time,inj_ms_base
+    );
+}
+
 /**  @} */
 
 

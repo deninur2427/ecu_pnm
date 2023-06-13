@@ -1,6 +1,6 @@
 /**
  * @file ecu_icu.h
- * @brief Input Capture header
+ * @brief Input Capture Unit header
  *
  * @addtogroup ICU
  * @{
