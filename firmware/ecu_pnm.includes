@@ -2,6 +2,7 @@ ecu
 f103rb_nucleo
 f103rb_nucleo/board
 f103rb_nucleo/memory
+/opt/stm32chlib/chibios3/os/various
 /opt/stm32chlib/chibios3/os/rt/include
 /opt/stm32chlib/chibios3/os/hal/include
 /opt/stm32chlib/chibios3/os/hal/lib/streams

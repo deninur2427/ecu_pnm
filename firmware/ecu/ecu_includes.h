@@ -19,6 +19,7 @@
 #include "ch.h"
 #include "hal.h"
 
+#include "shell.h"
 #include "chprintf.h"
 
 #include "ecu_adc.h"
@@ -26,6 +27,7 @@
 #include "ecu_mem.h"
 #include "ecu_icu.h"
 #include "ecu_gpt.h"
+#include "ecu_shell.h"
 #include "ecu_engine.h"
 
 #define assert_param(expr) ((void)0)

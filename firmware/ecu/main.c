@@ -33,12 +33,14 @@ int main(void) {
 
   ecu_MEM_Init();
   ecu_GPIO_Init();
+  ecu_SHELL_Init();
   ecu_ICU_Init();
   ecu_ADC_Init();
   ecu_GPT_Init();
 
   while (true) {
-    chThdSleepMilliseconds(500);
+      ecu_SHELL_Loop();
+      chThdSleepMilliseconds(500);
   }
 }
 
