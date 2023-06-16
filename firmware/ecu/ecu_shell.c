@@ -37,6 +37,8 @@ void ecu_SHELL_Init(void){
 
     sdStart(&SD1, NULL);
     shellInit();
+
+    chprintf((BaseSequentialStream*)&SD1,"Serial Shell Running\r\n");
 }
 
 void ecu_SHELL_Loop(void){
