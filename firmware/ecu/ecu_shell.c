@@ -8,21 +8,27 @@
 
 #include "ecu_includes.h"
 
+extern adcsample_t adc_tps_val;
+
 thread_t *shelltp = NULL;
 
 static void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]){
     (void) argv;
 
-    if(argc>0){
-        chprintf(chp, "Usage: test\r\n");
-    }
+    if(argc==0) chprintf(chp, "Serial Interface Working \r\n");
+    return;
+}
 
-    chprintf(chp, "Serial Interface Working \r\n");
+static void cmd_tps_val(BaseSequentialStream *chp, int argc, char *argv[]){
+    (void) argv;
+
+    if(argc==0) chprintf(chp,"%i\n",adc_tps_val);
     return;
 }
 
 static const ShellCommand commands[] = {
     {"test",cmd_test},
+    {"tps",cmd_tps_val},
     {NULL,NULL}
 };
 

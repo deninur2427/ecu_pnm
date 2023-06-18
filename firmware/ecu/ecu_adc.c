@@ -11,8 +11,9 @@
 extern adcsample_t adc_tps;
 extern adcsample_t adc_tps_close, adc_tps_full;
 
+adcsample_t adc_tps_val;
+
 static adcsample_t samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
-static adcsample_t adc_tps_val;
 static uint32_t sum_adc_tps;
 
 void adc_cb(ADCDriver *adcp, adcsample_t *buffer, size_t n){

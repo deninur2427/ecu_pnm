@@ -2692,8 +2692,8 @@
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid fc7be9aa-07bf-4aa1-8ba3-6040f3ae7698)
   )
-  (text "Correction:\n1. Dont connect any STM32 3V3\n	a) conflict with FTDI 3V3\n	b) STM32 cant be programmed\n2. Temporarily, connect U5V to VCC 5V\n3. If using AMS1117-5V\n	a) disconnect U5V\n	b) MOVE THE NUCLEO JUMPER!!"
-    (at 109.22 189.23 0)
+  (text "Correction:\n1. Dont connect any STM32 3V3\n	a) conflict with FTDI 3V3\n	b) STM32 cant be programmed\n2. Temporarily, connect U5V to VCC 5V\n3. If using AMS1117-5V\n	a) disconnect U5V\n	b) MOVE THE NUCLEO JUMPER!!\n4. CKP Input Terminal use 3-pin"
+    (at 109.22 193.04 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid febdd5b0-fc7e-4c97-b97d-09e9ab134b31)
   )
