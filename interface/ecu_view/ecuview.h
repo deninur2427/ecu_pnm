@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ecuView; }
@@ -20,8 +23,16 @@ private slots:
     void on_actionQuit_triggered();
     void on_actionAboutQt_triggered();
     void on_actionAbout_triggered();
+    void on_btnPortRefresh_clicked();
+
+    void serialPortPopulate();
+    void serialDataRead();
+    void serialDataRequest();
 
 private:
     Ui::ecuView *ui;
+    QSerialPort *ecuPort;
+    QTimer* tmrData;
+
 };
 #endif // ECUVIEW_H

@@ -13,14 +13,126 @@
   <property name="windowTitle">
    <string>ecuView</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabMain">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabControl">
+     <attribute name="title">
+      <string>Control</string>
+     </attribute>
+     <widget class="QGroupBox" name="grpSerialPort">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>301</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Serial Communication</string>
+      </property>
+      <widget class="QPushButton" name="btnSerialPort">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>85</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Open</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmbSerialPort">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblSerialPort">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>50</y>
+         <width>191</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Port Default: 38400-8-N-1</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnPortRefresh">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>85</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="grpSerialData">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>0</y>
+        <width>471</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Serial Data Buffer</string>
+      </property>
+      <widget class="QPlainTextEdit" name="txtSerialData">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>461</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabMapping">
+     <attribute name="title">
+      <string>Mapping</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuQuit">

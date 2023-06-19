@@ -6,6 +6,13 @@ ecuView::ecuView(QWidget *parent)
     , ui(new Ui::ecuView)
 {
     ui->setupUi(this);
+
+    ecuPort = new QSerialPort(this);
+    tmrData = new QTimer(this);
+    tmrData->stop();
+
+    // update serial port
+    serialPortPopulate();
 }
 
 ecuView::~ecuView()
@@ -34,5 +41,32 @@ void ecuView::on_actionAbout_triggered()
     msgAbout.setWindowTitle("ECU Interface");
     msgAbout.setIcon(QMessageBox::Information);
     msgAbout.exec();
+}
+
+void ecuView::serialPortPopulate(){
+    ui->cmbSerialPort->clear();
+
+    foreach (QSerialPortInfo portInfo,QSerialPortInfo::availablePorts()){
+        ui->cmbSerialPort->addItem(portInfo.portName());
+    }
+}
+
+void ecuView::serialDataRead(){
+    QByteArray rawData = ecuPort->readAll();
+
+    ui->txtSerialData->insertPlainText(rawData);
+    if(ui->txtSerialData->toPlainText().isEmpty()) return;
+}
+
+void ecuView::serialDataRequest(){
+    ui->txtSerialData->clear();
+    QByteArray dataReq = "tps\n";
+    ecuPort->write(dataReq);
+}
+
+
+void ecuView::on_btnPortRefresh_clicked()
+{
+    serialPortPopulate();
 }
 
