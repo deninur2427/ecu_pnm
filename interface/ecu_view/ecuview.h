@@ -24,6 +24,7 @@ private slots:
     void on_actionAboutQt_triggered();
     void on_actionAbout_triggered();
     void on_btnPortRefresh_clicked();
+    void on_btnSerialPort_clicked();
 
     void serialPortPopulate();
     void serialDataRead();

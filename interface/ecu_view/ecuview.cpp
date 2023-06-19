@@ -11,8 +11,17 @@ ecuView::ecuView(QWidget *parent)
     tmrData = new QTimer(this);
     tmrData->stop();
 
+    ecuPort->setBaudRate(QSerialPort::Baud38400);
+    ecuPort->setDataBits(QSerialPort::Data8);
+    ecuPort->setStopBits(QSerialPort::OneStop);
+    ecuPort->setFlowControl(QSerialPort::NoFlowControl);
+    ecuPort->setParity(QSerialPort::NoParity);
+
     // update serial port
     serialPortPopulate();
+
+    connect(ecuPort,SIGNAL(readyRead()),this,SLOT(serialDataRead()));
+    connect(tmrData,SIGNAL(timeout()),this,SLOT(serialDataRequest()));
 }
 
 ecuView::~ecuView()
@@ -60,7 +69,7 @@ void ecuView::serialDataRead(){
 
 void ecuView::serialDataRequest(){
     ui->txtSerialData->clear();
-    QByteArray dataReq = "tps\n";
+    QByteArray dataReq = "tps\r";
     ecuPort->write(dataReq);
 }
 
@@ -68,5 +77,31 @@ void ecuView::serialDataRequest(){
 void ecuView::on_btnPortRefresh_clicked()
 {
     serialPortPopulate();
+}
+
+
+void ecuView::on_btnSerialPort_clicked()
+{
+    QString strBtnName = ui->btnSerialPort->text();
+    ecuPort->setPortName(ui->cmbSerialPort->currentText());
+
+    if(strBtnName=="Open"){
+        if(ecuPort->open(QIODevice::ReadWrite)){
+            ui->statusbar->showMessage("Serial Opened");
+            ui->btnSerialPort->setText("Close");
+            tmrData->start(100);
+            ui->cmbSerialPort->setEnabled(false);
+        }
+        else{
+            ui->statusbar->showMessage("Serial Opening Failed");
+        }
+    }
+    else if(strBtnName=="Close"){
+        if(ecuPort->isOpen()) ecuPort->close();
+        ui->btnSerialPort->setText("Open");
+        ui->statusbar->showMessage("Serial Closed");
+        tmrData->stop();
+        ui->cmbSerialPort->setEnabled(true);
+    }
 }
 
