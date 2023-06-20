@@ -1,11 +1,16 @@
 #include "ecuview.h"
 #include "ui_ecuview.h"
 
+int valTPS = 0;
+int defTPS[2]={5,3050};
+
 ecuView::ecuView(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ecuView)
 {
     ui->setupUi(this);
+
+    ui->tabMain->addTab(new dialView, "Monitoring");
 
     ecuPort = new QSerialPort(this);
     tmrData = new QTimer(this);
@@ -65,6 +70,9 @@ void ecuView::serialDataRead(){
 
     ui->txtSerialData->insertPlainText(rawData);
     if(ui->txtSerialData->toPlainText().isEmpty()) return;
+
+    int adcTPS = ui->txtSerialData->toPlainText().toInt();
+    valTPS = (adcTPS - defTPS[0]) * 100 / (defTPS[1] - defTPS[0]);
 }
 
 void ecuView::serialDataRequest(){

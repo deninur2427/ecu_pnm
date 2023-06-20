@@ -7,6 +7,8 @@
 #include <QSerialPortInfo>
 #include <QTimer>
 
+#include "dialview.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class ecuView; }
 QT_END_NAMESPACE
