@@ -28,20 +28,37 @@
  * Application entry point.
  */
 int main(void) {
-  halInit();
-  chSysInit();
+	// Hardware Abstraction Layer initialization
+	halInit();
 
-  ecu_MEM_Init();
-  ecu_GPIO_Init();
-  ecu_SHELL_Init();
-  ecu_ICU_Init();
-  ecu_ADC_Init();
-  ecu_GPT_Init();
+	// RTOS scheduler initialization
+	chSysInit();
 
-  while (true) {
-      ecu_SHELL_Loop();
-      chThdSleepMilliseconds(500);
-  }
+	// EEPROM initialization
+	ecu_MEM_Init();
+
+	// I/O Pins initialization
+	ecu_GPIO_Init();
+
+	// Serial Shell initialization
+	ecu_SHELL_Init();
+
+	// Input Capture initialization
+	ecu_ICU_Init();
+
+	// Analog-Digital initialization
+	ecu_ADC_Init();
+
+	// Generic Timer initialization
+	ecu_GPT_Init();
+
+	while (true) {
+		// Serial Shell Loop initialization
+		ecu_SHELL_Loop();
+
+		// Latency to keep scheduling from race
+		chThdSleepMilliseconds(500);
+	}
 }
 
 /**  @} */

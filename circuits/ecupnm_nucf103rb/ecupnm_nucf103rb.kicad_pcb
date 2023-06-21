@@ -3076,10 +3076,10 @@
       (net 1 "GND") (pinfunction "Shield") (pintype "passive") (tstamp 70aa09e1-ff94-427b-b7f1-256c100ba0e9))
     (pad "6" smd rect (at 4.4 2.6 180) (size 2 2.5) (layers "B.Cu" "B.Paste" "B.Mask")
       (net 1 "GND") (pinfunction "Shield") (pintype "passive") (tstamp 151ae0ce-c947-4aa3-9770-ce6f4bc1e67b))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_USB.3dshapes/USB_Mini-B_Wuerth_65100516121_Horizontal.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/USB_Mini_B_SMD_buchse.STEP"
+      (offset (xyz 0 -6 2))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 

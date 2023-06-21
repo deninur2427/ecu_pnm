@@ -4,3 +4,14 @@ build/
 .dep/
 *.creator.user
 build-*/
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+_minted*
