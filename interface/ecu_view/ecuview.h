@@ -9,6 +9,10 @@
 
 #include "dialview.h"
 
+#define USE_REVERSE_INJ 1
+
+#define CDATA           12
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class ecuView; }
 QT_END_NAMESPACE
@@ -32,10 +36,12 @@ private slots:
     void serialDataRead();
     void serialDataRequest();
 
+    void on_btnMonitoring_clicked();
+
 private:
     Ui::ecuView *ui;
     QSerialPort *ecuPort;
-    QTimer* tmrData;
+    QTimer* tmrMonitor;
 
 };
 #endif // ECUVIEW_H
