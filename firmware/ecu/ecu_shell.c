@@ -9,6 +9,7 @@
 #include "ecu_includes.h"
 
 extern adcsample_t adc_tps_val;
+extern icucnt_t rpm;
 
 thread_t *shelltp = NULL;
 
@@ -19,16 +20,19 @@ static void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]){
     return;
 }
 
-static void cmd_tps_val(BaseSequentialStream *chp, int argc, char *argv[]){
+static void cmd_basic(BaseSequentialStream *chp, int argc, char *argv[]){
     (void) argv;
 
-    if(argc==0) chprintf(chp,"%i\n",adc_tps_val);
+    // testing purpose
+    rpm = adc_tps_val / 100;
+
+    if(argc==0) chprintf(chp,"%i,%i\n",adc_tps_val,rpm);
     return;
 }
 
 static const ShellCommand commands[] = {
     {"test",cmd_test},
-    {"tps",cmd_tps_val},
+    {"basic",cmd_basic},
     {NULL,NULL}
 };
 

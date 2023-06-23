@@ -36,7 +36,7 @@
         <x>0</x>
         <y>0</y>
         <width>301</width>
-        <height>81</height>
+        <height>111</height>
        </rect>
       </property>
       <property name="title">
@@ -68,8 +68,8 @@
       <widget class="QLabel" name="lblSerialPort">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>50</y>
+         <x>10</x>
+         <y>80</y>
          <width>191</width>
          <height>16</height>
         </rect>
@@ -91,6 +91,19 @@
         <string>Refresh</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="btnMonitoring">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>50</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start Monitoring</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="grpSerialData">
       <property name="geometry">
@@ -98,7 +111,7 @@
         <x>320</x>
         <y>0</y>
         <width>471</width>
-        <height>81</height>
+        <height>111</height>
        </rect>
       </property>
       <property name="title">
@@ -107,27 +120,14 @@
       <widget class="QPlainTextEdit" name="txtSerialData">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>10</x>
          <y>20</y>
-         <width>461</width>
-         <height>21</height>
+         <width>451</width>
+         <height>71</height>
         </rect>
        </property>
        <property name="readOnly">
         <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnMonitoring">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>50</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Start Monitoring</string>
        </property>
       </widget>
      </widget>

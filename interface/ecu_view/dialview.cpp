@@ -68,4 +68,5 @@ QwtDial* dialView::createDial(int pos){
 
 void dialView::updateValue(){
     d_tps->setValue(valTPS);
+    d_rpm->setValue(valRPM);
 }

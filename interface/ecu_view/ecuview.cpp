@@ -76,6 +76,8 @@ ecuView::ecuView(QWidget *parent)
     ecuPort->setStopBits(QSerialPort::OneStop);
     ecuPort->setFlowControl(QSerialPort::NoFlowControl);
     ecuPort->setParity(QSerialPort::NoParity);
+    ecuDataMode = SERIAL_MODE_INFO;
+    ecuReqFlag = SERIAL_IDLE;
 
     // update serial port
     serialPortPopulate();
@@ -126,14 +128,20 @@ void ecuView::serialDataRead(){
     ui->txtSerialData->insertPlainText(rawData);
     if(ui->txtSerialData->toPlainText().isEmpty()) return;
 
-    int adcTPS = ui->txtSerialData->toPlainText().toInt();
-    valTPS = (adcTPS - limTPS[0]) * 100 / (limTPS[1] - limTPS[0]);
+    serialDataParsing(ui->txtSerialData->toPlainText(),ecuDataMode);
+    ecuReqFlag = SERIAL_IDLE;
 }
 
 void ecuView::serialDataRequest(){
     ui->txtSerialData->clear();
-    QByteArray dataReq = "tps\r";
-    ecuPort->write(dataReq);
+
+    QByteArray dataReq = "basic\r";
+    ecuDataMode = SERIAL_MODE_INFO;
+
+    if(ecuReqFlag==SERIAL_IDLE){
+        ecuPort->write(dataReq);
+        ecuReqFlag = SERIAL_WAIT;
+    }
 }
 
 
@@ -184,6 +192,24 @@ void ecuView::on_btnMonitoring_clicked()
         tmrMonitor->stop();
         ui->btnMonitoring->setText("Start Monitoring");
         ui->statusbar->showMessage("Engine Monitor Dial Stopped");
+    }
+}
+
+void ecuView::serialDataParsing(QString strData, int modeData){
+    QStringList dataVals = strData.split(",");
+
+    switch (modeData) {
+
+    case SERIAL_MODE_INFO: {
+        if(dataVals.count()<2) break;
+
+        int adcTPS = dataVals[0].toInt();
+        valTPS = (adcTPS - limTPS[0]) * 100 / (limTPS[1] - limTPS[0]);
+        valRPM = dataVals[1].toInt();
+    }
+
+    default:
+        break;
     }
 }
 
