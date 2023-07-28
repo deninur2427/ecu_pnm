@@ -24,7 +24,7 @@ static void cmd_basic(BaseSequentialStream *chp, int argc, char *argv[]){
     (void) argv;
 
     // testing purpose
-    rpm = adc_tps_val / 100;
+    //rpm = adc_tps_val / 100;
 
     if(argc==0) chprintf(chp,"%i,%i\n",adc_tps_val,rpm);
     return;
