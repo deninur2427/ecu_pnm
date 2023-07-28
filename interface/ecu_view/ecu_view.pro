@@ -2,7 +2,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -23,8 +23,12 @@ FORMS += \
     ecuview.ui
 
 CONFIG += qwt
-INCLUDEPATH += /usr/include/qwt/
-LIBS += -lqwt
+
+unix: INCLUDEPATH += /usr/include/qwt/
+unix: LIBS += -L/usr/lib/ -lqwt
+
+win32: INCLUDEPATH += C:\Qwt-6.2.0\include
+win32: LIBS += C:/Qwt-6.2.0/lib/qwt.dll
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
