@@ -24,6 +24,9 @@
 #define ENGINE_TOOTH_EXHAUST_OPEN   18
 #define ENGINE_TOOTH_EXHAUST_CLOSE  6
 
+#define ENGINE_INJ_USETIMER         FALSE
+#define ENGINE_IGN_USETIMER         FALSE
+
 /**
  * @brief Amount of all Tooth
  * @details Tooth is 24 with 1 missing

@@ -43,8 +43,8 @@ QwtDial* dialView::createDial(int pos){
     }
     case 2: {
         d_rpm = new dialMeter(this);
-        d_rpm->setScaleStepSize( 10.0 );
-        d_rpm->setScale( 0.0, 100.0 );
+        d_rpm->setScaleStepSize( 200.0 );
+        d_rpm->setScale( 0.0, 2000.0 );
         d_rpm->scaleDraw()->setPenWidthF(2);
         d_rpm->setLabel("RPM");
         d_rpm->setFixedHeight(sizedial);

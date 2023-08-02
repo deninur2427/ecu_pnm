@@ -26,7 +26,7 @@ Custom Engine Control Unit for LPG
 - [ ] Optimasi
     - [ ] Sensor Temperature (Tentative)
     - [ ] CO2 Sensor. Rencana [Tokopedia](https://www.tokopedia.com/amanahotopart/sensor-oxygen-honda-jazz-city-belakang-oksigen-co2-o2-copotan-asli-ori)
-    
+
 ### Output
 
 - [ ] Intake
@@ -39,12 +39,13 @@ Custom Engine Control Unit for LPG
     - [ ] Cop Busi [Tokopedia](https://www.tokopedia.com/azkamotor99/canglong-tutup-cop-busi-grand-supra-x-x-125-legenda-revo-kharisma)
     - [ ] Plug telah tersedia
 ![images](images/plan/plug.jpg)
+    - [ ] Sinyal Coil pin dekat kabel ke Busi
 
 - [ ] Aki. Alternator dan Kiprok tidak ada di Mesin
     - [x] Charger Aki tersedia
     - [ ] Jepit Aki dan Wiring nya
-    
-### PCB 
+
+### PCB
 
 - [ ] Drafting
     - [ ] Single Cylinder

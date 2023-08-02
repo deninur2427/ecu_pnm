@@ -147,9 +147,11 @@ void ecu_ENG_InjIgnControl(void){
     if(toothcount==ENGINE_TOOTH_INTAKE_OPEN){
         ecu_ENG_Inj_ON();
 
+#if ENGINE_INJ_USETIMER
         chSysLockFromISR();
         gptStartOneShotI(&GPTD1,inj_ms_tick);
         chSysUnlockFromISR();
+#endif
     }
 
     if(toothcount==ENGINE_TOOTH_INTAKE_CLOSE){
@@ -164,9 +166,13 @@ void ecu_ENG_InjIgnControl(void){
     }
 
     if(toothcount==ENGINE_TOOTH_COIL_OFF){
+#if ENGINE_IGN_USETIMER
         chSysLockFromISR();
         gptStartOneShotI(&GPTD4, ign_off_tick);
         chSysUnlockFromISR();
+#else
+        ecu_ENG_Ign_OFF();
+#endif
     }
 }
 

@@ -24,10 +24,35 @@
 
 #include "ecu_includes.h"
 
+#define MAIN_LEDTEST FALSE
+
+#if MAIN_LEDTEST
+static THD_WORKING_AREA(wa_ledTestThread, 128);
+static THD_FUNCTION(ledTestThread, arg) {
+    (void)arg;
+    palSetPad(GPIOA, CKP_LED);
+    while (TRUE) {
+	palTogglePad(GPIOA, CKP_LED);
+        chThdSleepMilliseconds(250);
+    }
+}
+#endif
+
 /*
  * Application entry point.
  */
 int main(void) {
+
+#if MAIN_LEDTEST
+	halInit();
+	chSysInit();
+	palSetPadMode(GPIOA, CKP_LED, PAL_MODE_OUTPUT_PUSHPULL);
+	chThdCreateStatic(wa_ledTestThread, sizeof(wa_ledTestThread), NORMALPRIO, ledTestThread, NULL);
+	while (true) {
+		chThdSleepMilliseconds(500);
+	}
+#else
+
 	// Hardware Abstraction Layer initialization
 	halInit();
 
@@ -59,6 +84,7 @@ int main(void) {
 		// Latency to keep scheduling from race
 		chThdSleepMilliseconds(500);
 	}
+#endif
 }
 
 /**  @} */
