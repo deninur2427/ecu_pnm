@@ -39,7 +39,6 @@ Custom Engine Control Unit for LPG
     - [ ] Cop Busi [Tokopedia](https://www.tokopedia.com/azkamotor99/canglong-tutup-cop-busi-grand-supra-x-x-125-legenda-revo-kharisma)
     - [ ] Plug telah tersedia
 ![images](images/plan/plug.jpg)
-    - [ ] Sinyal Coil pin dekat kabel ke Busi
 
 - [ ] Aki. Alternator dan Kiprok tidak ada di Mesin
     - [x] Charger Aki tersedia
@@ -54,3 +53,7 @@ Custom Engine Control Unit for LPG
             - [x] F103RB
 ![images](images/progress/ecupnm_nucf103rb.png)
 - [x] Rencana Anggaran Total
+
+### Update Kegiatan
+
+- Tanggal 31 Juli 2023: [Catatan](https://github.com/mekatronik-achmadi/md_tutorial/blob/master/pelatihan/install_git.md)
