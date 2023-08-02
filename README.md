@@ -56,4 +56,4 @@ Custom Engine Control Unit for LPG
 
 ### Update Kegiatan
 
-- Tanggal 31 Juli 2023: [Catatan](https://github.com/mekatronik-achmadi/md_tutorial/blob/master/pelatihan/install_git.md)
+- Tanggal 31 Juli 2023: [Catatan](https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_31072023.md)
