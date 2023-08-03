@@ -6,3 +6,5 @@ f103rb_nucleo/memory
 /opt/stm32chlib/chibios3/os/rt/include
 /opt/stm32chlib/chibios3/os/hal/include
 /opt/stm32chlib/chibios3/os/hal/lib/streams
+f051r8_nucleo
+f051r8_nucleo/board

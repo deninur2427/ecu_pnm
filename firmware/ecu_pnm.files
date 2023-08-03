@@ -13,6 +13,13 @@ ecu/ecu_includes.h
 ecu/ecu_mem.c
 ecu/ecu_mem.h
 ecu/main.c
+f051r8_nucleo/Makefile
+f051r8_nucleo/board/board.c
+f051r8_nucleo/board/board.h
+f051r8_nucleo/board/board.mk
+f051r8_nucleo/chconf.h
+f051r8_nucleo/halconf.h
+f051r8_nucleo/mcuconf.h
 f103rb_nucleo/Makefile
 f103rb_nucleo/board/board.c
 f103rb_nucleo/board/board.h
