@@ -6472,7 +6472,7 @@
     (property "Value" "100uF" (at 232.41 88.9 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D7.5mm_P2.50mm" (at 239.7252 90.17 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" (at 239.7252 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 238.76 86.36 0)
