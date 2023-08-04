@@ -190,10 +190,10 @@ CPPWARN = -Wall -Wextra -Wundef
 #
 
 # List all user C define here, like -D_DEBUG=1
-UDEFS =
+UDEFS = -DF051R8NUCLEO
 
 # Define ASM defines here
-UADEFS = -DF051R8NUCLEO
+UADEFS =
 
 # List all user directories here
 UINCDIR =

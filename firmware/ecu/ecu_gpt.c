@@ -8,33 +8,40 @@
 
 #include "ecu_includes.h"
 
-static void gpt1cb(GPTDriver *gptp){
+static void gptInjCb(GPTDriver *gptp){
     (void) gptp;
     ecu_ENG_Inj_OFF();
 }
 
-static void gpt4cb(GPTDriver *gptp){
+static void gptIgnCb(GPTDriver *gptp){
     (void) gptp;
     ecu_ENG_Ign_OFF();
 }
 
-static const GPTConfig gpt1cfg = {
+static const GPTConfig gptInjCfg = {
     F_GPT,    /* 10kHz timer clock.*/
-    gpt1cb,   /* Timer callback.*/
+    gptInjCb, /* Timer callback.*/
     0,
     0
 };
 
-static const GPTConfig gpt4cfg = {
+static const GPTConfig gptIgnCfg = {
     F_GPT,    /* 10kHz timer clock.*/
-    gpt4cb,   /* Timer callback.*/
+    gptIgnCb, /* Timer callback.*/
     0,
     0
 };
 
 void ecu_GPT_Init(void){
-    gptStart(&GPTD1, &gpt1cfg);
-    gptStart(&GPTD4, &gpt4cfg);
+    gptStart(&GPTD1, &gptInjCfg);
+
+#ifdef F051R8NUCLEO
+    gptStart(&GPTD14, &gptIgnCfg);
+#endif
+
+#ifdef F103RBNUCLEO
+    gptStart(&GPTD4, &gptIgnCfg);
+#endif
 }
 
 /**  @} */

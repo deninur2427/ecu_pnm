@@ -12,6 +12,8 @@ ecu/ecu_icu.h
 ecu/ecu_includes.h
 ecu/ecu_mem.c
 ecu/ecu_mem.h
+ecu/ecu_shell.c
+ecu/ecu_shell.h
 ecu/main.c
 f051r8_nucleo/Makefile
 f051r8_nucleo/board/board.c

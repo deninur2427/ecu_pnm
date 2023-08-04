@@ -40,6 +40,7 @@ void adc_cb(ADCDriver *adcp, adcsample_t *buffer, size_t n){
 }
 
 static const ADCConversionGroup adcgrpcfg = {
+#ifdef F103RBNUCLEO
     FALSE,
     ADC_GRP1_NUM_CHANNELS,
     adc_cb,
@@ -52,6 +53,19 @@ static const ADCConversionGroup adcgrpcfg = {
     ADC_SQR1_NUM_CH(ADC_GRP1_NUM_CHANNELS),
     0,
     ADC_SQR3_SQ1_N(ADC_CHANNEL_IN0)
+#endif
+
+#ifdef F051R8NUCLEO
+    FALSE,
+    ADC_GRP1_NUM_CHANNELS,
+    adc_cb,
+    NULL,
+    /* HW Dependent Part */
+    ADC_CFGR1_CONT | ADC_CFGR1_RES_12BIT,             /* CFGR1 */
+    ADC_TR(0, 0),                                     /* TR */
+    ADC_SMPR_SMP_28P5,                                /* SMPR */
+    ADC_CHSELR_CHSEL0                                 /* CHSELR */
+#endif
 };
 
 static THD_WORKING_AREA(wa_adcThread, 128);

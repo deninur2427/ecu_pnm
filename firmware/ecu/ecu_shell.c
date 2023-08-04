@@ -42,8 +42,15 @@ static const ShellConfig shell_cfg = {
 };
 
 void ecu_SHELL_Init(void){
+#ifdef F103RBNUCLEO
     palSetPadMode(GPIOA, 9, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
     palSetPadMode(GPIOA, 10, PAL_MODE_INPUT);
+#endif
+
+#ifdef F051R8NUCLEO
+    palSetPadMode(GPIOA, 9, PAL_MODE_ALTERNATE(1));
+    palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(1));
+#endif
 
     sdStart(&SD1, NULL);
     shellInit();

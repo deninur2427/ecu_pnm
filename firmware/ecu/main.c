@@ -24,8 +24,6 @@
 
 #include "ecu_includes.h"
 
-#define MAIN_LEDTEST FALSE
-
 #if MAIN_LEDTEST
 static THD_WORKING_AREA(wa_ledTestThread, 128);
 static THD_FUNCTION(ledTestThread, arg) {
@@ -60,7 +58,9 @@ int main(void) {
 	chSysInit();
 
 	// EEPROM initialization
+ #ifdef F103RBNUCLEO
 	ecu_MEM_Init();
+ #endif
 
 	// I/O Pins initialization
 	ecu_GPIO_Init();

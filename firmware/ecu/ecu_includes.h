@@ -9,6 +9,8 @@
 #ifndef _ECU_INCLUDES_H_
 #define _ECU_INCLUDES_H_
 
+#define MAIN_LEDTEST TRUE
+
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
@@ -32,8 +34,10 @@
 
 #define assert_param(expr) ((void)0)
 
-#include "stm32f10x_flash.h"
-#include "stm32f10x_eeprom.h"
+#ifdef F103RBNUCLEO
+ #include "stm32f10x_flash.h"
+ #include "stm32f10x_eeprom.h"
+#endif
 
 #endif
 
