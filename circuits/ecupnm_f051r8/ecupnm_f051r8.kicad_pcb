@@ -530,10 +530,10 @@
       (net 6 "+12V") (pinfunction "Pin_1") (pintype "passive") (tstamp e74d97d7-b60b-4d0e-b799-f7f7a4f3fcb1))
     (pad "2" thru_hole oval (at 5 0 270) (size 1.98 3.96) (drill 1.32) (layers "*.Cu" "*.Mask")
       (net 7 "GNDPWR") (pinfunction "Pin_2") (pintype "passive") (tstamp aa576358-d5b2-42e9-8e34-7a0a804eab6e))
-    (model "${KICAD6_3DMODEL_DIR}/TerminalBlock.3dshapes/TerminalBlock_Altech_AK300-2_P5.00mm.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/2445P Screw Terminal Block- 2 Pin, 3.5mm Pitch, Side Entry.STEP"
+      (offset (xyz 2.5 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -826,10 +826,10 @@
       (net 16 "PULSER") (pinfunction "Pin_1") (pintype "passive") (tstamp 0789c16a-5195-4317-8ee9-d533839131eb))
     (pad "2" thru_hole oval (at 5 0 90) (size 1.98 3.96) (drill 1.32) (layers "*.Cu" "*.Mask")
       (net 1 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp bac3b01c-1741-4f3d-89c7-3fd1fbf62de4))
-    (model "${KICAD6_3DMODEL_DIR}/TerminalBlock.3dshapes/TerminalBlock_Altech_AK300-2_P5.00mm.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/2445P Screw Terminal Block- 2 Pin, 3.5mm Pitch, Side Entry.STEP"
+      (offset (xyz 2.5 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -1394,10 +1394,10 @@
       (net 13 "PORT_INJ") (pinfunction "Pin_1") (pintype "passive") (tstamp 4708b03f-255b-4f16-8da5-5d4e4e13c238))
     (pad "2" thru_hole oval (at 5 0) (size 1.98 3.96) (drill 1.32) (layers "*.Cu" "*.Mask")
       (net 14 "PORT_IGN") (pinfunction "Pin_2") (pintype "passive") (tstamp ca33f1ac-5da7-4045-91c7-ad3e435ea00e))
-    (model "${KICAD6_3DMODEL_DIR}/TerminalBlock.3dshapes/TerminalBlock_Altech_AK300-2_P5.00mm.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/2445P Screw Terminal Block- 2 Pin, 3.5mm Pitch, Side Entry.STEP"
+      (offset (xyz 2.5 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -2639,10 +2639,10 @@
       (net 27 "Net-(JT3-Pin_2)") (pinfunction "Pin_2") (pintype "passive") (tstamp 6a961dce-83cb-4788-9c36-83223dd4baf5))
     (pad "3" thru_hole oval (at 10 0 90) (size 1.98 3.96) (drill 1.32) (layers "*.Cu" "*.Mask")
       (net 1 "GND") (pinfunction "Pin_3") (pintype "passive") (tstamp fefffebc-27c3-46b7-9fb7-be703ff35725))
-    (model "${KICAD6_3DMODEL_DIR}/TerminalBlock.3dshapes/TerminalBlock_Altech_AK300-3_P5.00mm.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/Screw Terminal Block 3.5mm 3-way.step"
+      (offset (xyz 5 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -3365,10 +3365,10 @@
       (net 1 "GND") (pinfunction "Shield") (pintype "passive") (tstamp 337aa602-bd78-4c3d-96fd-6a5ea58e6cb7))
     (pad "6" smd rect (at 4.4 2.9 180) (size 2 2.5) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 1 "GND") (pinfunction "Shield") (pintype "passive") (tstamp f5f5745a-6693-4560-9144-4d5b8e668b4b))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_USB.3dshapes/USB_Mini-B_Wuerth_65100516121_Horizontal.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/libs/pkg3d/USB_Mini_B_SMD_buchse.STEP"
+      (offset (xyz 0 -6 2))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
