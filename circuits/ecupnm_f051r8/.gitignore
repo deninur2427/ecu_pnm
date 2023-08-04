@@ -5,3 +5,7 @@ exports/
 *.step
 *.wrl
 shape3D/
+libs/pkg3d/
+*.jpg
+*.png
+*.csv
