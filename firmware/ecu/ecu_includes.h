@@ -9,7 +9,7 @@
 #ifndef _ECU_INCLUDES_H_
 #define _ECU_INCLUDES_H_
 
-#define MAIN_LEDTEST TRUE
+#define MAIN_LEDTEST FALSE
 
 #include <stdio.h>
 #include <string.h>
@@ -37,6 +37,11 @@
 #ifdef F103RBNUCLEO
  #include "stm32f10x_flash.h"
  #include "stm32f10x_eeprom.h"
+#endif
+
+#ifdef F051R8NUCLEO
+ #include "stm32f0xx_flash.h"
+ #include "stm32f0xx_eeprom.h"
 #endif
 
 #endif
