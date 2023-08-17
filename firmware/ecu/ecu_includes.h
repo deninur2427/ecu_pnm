@@ -9,7 +9,7 @@
 #ifndef _ECU_INCLUDES_H_
 #define _ECU_INCLUDES_H_
 
-#define MAIN_LEDTEST FALSE
+#define MAIN_LEDTEST TRUE
 
 #include <stdio.h>
 #include <string.h>
