@@ -9,8 +9,6 @@
 #ifndef _ECU_INCLUDES_H_
 #define _ECU_INCLUDES_H_
 
-#define MAIN_LEDTEST TRUE
-
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
@@ -24,6 +22,8 @@
 #include "shell.h"
 #include "chprintf.h"
 
+#include "ecu_config.h"
+
 #include "ecu_adc.h"
 #include "ecu_gpio.h"
 #include "ecu_mem.h"
@@ -31,8 +31,6 @@
 #include "ecu_gpt.h"
 #include "ecu_shell.h"
 #include "ecu_engine.h"
-
-#define assert_param(expr) ((void)0)
 
 #ifdef F103RBNUCLEO
  #include "stm32f10x_flash.h"

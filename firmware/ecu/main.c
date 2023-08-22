@@ -22,34 +22,13 @@
     limitations under the License.
 */
 
+#include "ecu_config.h"
 #include "ecu_includes.h"
-
-#if MAIN_LEDTEST
-static THD_WORKING_AREA(wa_ledTestThread, 128);
-static THD_FUNCTION(ledTestThread, arg) {
-    (void)arg;
-    palSetPad(GPIOA, CKP_LED);
-    while (TRUE) {
-	palTogglePad(GPIOA, CKP_LED);
-        chThdSleepMilliseconds(250);
-    }
-}
-#endif
 
 /*
  * Application entry point.
  */
 int main(void) {
-
-#if MAIN_LEDTEST
-	halInit();
-	chSysInit();
-	palSetPadMode(GPIOA, CKP_LED, PAL_MODE_OUTPUT_PUSHPULL);
-	chThdCreateStatic(wa_ledTestThread, sizeof(wa_ledTestThread), NORMALPRIO, ledTestThread, NULL);
-	while (true) {
-		chThdSleepMilliseconds(500);
-	}
-#else
 
 	// Hardware Abstraction Layer initialization
 	halInit();
@@ -58,31 +37,44 @@ int main(void) {
 	chSysInit();
 
 	// EEPROM initialization
+#if ECU_USE_MEM
 	ecu_MEM_Init();
+#endif
 
 	// I/O Pins initialization
+#if ECU_USE_GPIO
 	ecu_GPIO_Init();
+#endif
 
 	// Serial Shell initialization
+#if ECU_USE_SHELL
 	ecu_SHELL_Init();
+#endif
 
 	// Input Capture initialization
+#if ECU_USE_ICU
 	ecu_ICU_Init();
+#endif
 
 	// Analog-Digital initialization
+#if ECU_USE_ADC
 	ecu_ADC_Init();
+#endif
 
 	// Generic Timer initialization
+#if ECU_USE_GPT
 	ecu_GPT_Init();
+#endif
 
 	while (true) {
 		// Serial Shell Loop initialization
+	#if ECU_USE_SHELL
 		ecu_SHELL_Loop();
+	#endif
 
 		// Latency to keep scheduling from race
 		chThdSleepMilliseconds(500);
 	}
-#endif
 }
 
 /**  @} */
