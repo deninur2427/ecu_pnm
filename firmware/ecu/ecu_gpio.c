@@ -9,7 +9,7 @@
 #include "ecu_config.h"
 #include "ecu_includes.h"
 
-#if MAIN_LEDTEST
+#if LEDSHELL_TEST
 static THD_WORKING_AREA(wa_ledTestThread, 128);
 static THD_FUNCTION(ledTestThread, arg) {
     (void)arg;
@@ -29,7 +29,7 @@ void ecu_GPIO_Init(void){
 
     palSetPad(GPIOA, CKP_LED);
 
-#if MAIN_LEDTEST
+#if LEDSHELL_TEST
 	chThdCreateStatic(wa_ledTestThread, sizeof(wa_ledTestThread), NORMALPRIO, ledTestThread, NULL);
 #endif
 }
