@@ -58,9 +58,9 @@ int main(void) {
 	chSysInit();
 
 	// EEPROM initialization
- #ifdef F103RBNUCLEO
+ //#ifdef F103RBNUCLEO
 	ecu_MEM_Init();
- #endif
+ //#endif
 
 	// I/O Pins initialization
 	ecu_GPIO_Init();
