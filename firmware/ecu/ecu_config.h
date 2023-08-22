@@ -20,7 +20,7 @@
   #define ECU_USE_GPIO    TRUE
   #define ECU_USE_SHELL   TRUE
 #else
-  #define ECU_USE_MEM     FALSE
+  #define ECU_USE_MEM     TRUE
   #define ECU_USE_GPIO    TRUE
   #define ECU_USE_SHELL   TRUE
   #define ECU_USE_ICU     TRUE

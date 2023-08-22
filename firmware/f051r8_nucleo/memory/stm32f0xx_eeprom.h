@@ -35,8 +35,11 @@
 //#endif
 
 /* EEPROM start address in Flash */
-#define EEPROM_START_ADDRESS    ((uint32_t)0x08010000) /* EEPROM emulation start address:
-                                                  after 64KByte of used Flash memory */
+// For stm32f10x
+//#define EEPROM_START_ADDRESS    ((uint32_t)0x08010000) /* EEPROM emulation start address: after 64KByte of used Flash memory */
+
+// For stm32f0xx start at Page 20
+#define EEPROM_START_ADDRESS    ((uint32_t)0x08005000) /* EEPROM emulation start address: just check unused space in STLink-Utility */
 
 /* Pages 0 and 1 base and end addresses */
 #define PAGE0_BASE_ADDRESS      ((uint32_t)(EEPROM_START_ADDRESS + 0x000))
