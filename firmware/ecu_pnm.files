@@ -1,6 +1,7 @@
 ecu/ecu.mk
 ecu/ecu_adc.c
 ecu/ecu_adc.h
+ecu/ecu_config.h
 ecu/ecu_engine.c
 ecu/ecu_engine.h
 ecu/ecu_gpio.c
@@ -22,6 +23,11 @@ f051r8_nucleo/board/board.mk
 f051r8_nucleo/chconf.h
 f051r8_nucleo/halconf.h
 f051r8_nucleo/mcuconf.h
+f051r8_nucleo/memory/memory.mk
+f051r8_nucleo/memory/stm32f0xx_eeprom.c
+f051r8_nucleo/memory/stm32f0xx_eeprom.h
+f051r8_nucleo/memory/stm32f0xx_flash.c
+f051r8_nucleo/memory/stm32f0xx_flash.h
 f103rb_nucleo/Makefile
 f103rb_nucleo/board/board.c
 f103rb_nucleo/board/board.h

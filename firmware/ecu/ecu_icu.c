@@ -35,6 +35,8 @@ static void icuperiod_cb(ICUDriver *icup){
     ecu_ENG_ToothCalc();
     ecu_ENG_InjIgnCalc();
     ecu_ENG_InjIgnControl();
+
+    palSetPad(GPIOA,CKP_LED);
 }
 
 static ICUConfig icucfg = {
@@ -48,7 +50,15 @@ static ICUConfig icucfg = {
 };
 
 void ecu_ICU_Init(void){
+
+#ifdef F103RBNUCLEO
     palSetPadMode(GPIOA,CKP_PIN,PAL_MODE_INPUT_PULLDOWN);
+#endif
+
+#ifdef F051R8NUCLEO
+    palSetPadMode(GPIOA,CKP_PIN, PAL_MODE_ALTERNATE(1));
+#endif
+
     icuStart(&ICUD3, &icucfg);
     icuStartCapture(&ICUD3);
     icuEnableNotifications(&ICUD3);
