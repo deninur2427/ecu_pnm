@@ -22,6 +22,12 @@ static THD_FUNCTION(ledTestThread, arg) {
 #endif
 
 void ecu_GPIO_Init(void){
+
+#ifdef F051R8NUCLEO
+    palSetPadMode(GPIOA, 13, PAL_MODE_ALTERNATE(0));
+    palSetPadMode(GPIOA, 14, PAL_MODE_ALTERNATE(0));
+#endif
+
     palSetPadMode(GPIOA, CKP_LED, PAL_MODE_OUTPUT_PUSHPULL);
 
     palSetPadMode(OUT_PORT, OUT_INJ, PAL_MODE_OUTPUT_PUSHPULL);
