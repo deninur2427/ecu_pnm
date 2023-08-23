@@ -17,11 +17,6 @@ static adcsample_t samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 static uint32_t sum_adc_tps;
 
 void adc_cb(ADCDriver *adcp, adcsample_t *buffer, size_t n){
-
-#ifdef F051R8NUCLEO
-    (void)adcp;
-#endif
-
     (void) buffer;
     (void) n;
     uint8_t i;
