@@ -35,12 +35,12 @@ static const GPTConfig gptIgnCfg = {
 void ecu_GPT_Init(void){
     gptStart(&GPTD1, &gptInjCfg);
 
-#ifdef F051R8NUCLEO
-    gptStart(&GPTD14, &gptIgnCfg);
-#endif
-
 #ifdef F103RBNUCLEO
     gptStart(&GPTD4, &gptIgnCfg);
+#endif
+
+#ifdef F051R8NUCLEO
+    gptStart(&GPTD14, &gptIgnCfg);
 #endif
 }
 

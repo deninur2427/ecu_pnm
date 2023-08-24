@@ -168,7 +168,15 @@ void ecu_ENG_InjIgnControl(void){
     if(toothcount==ENGINE_TOOTH_COIL_OFF){
 #if ENGINE_IGN_USETIMER
         chSysLockFromISR();
+
+  #ifdef F103RBNUCLEO
         gptStartOneShotI(&GPTD4, ign_off_tick);
+  #endif
+
+  #ifdef F051R8NUCLEO
+        gptStartOneShotI(&GPTD14, ign_off_tick);
+  #endif
+
         chSysUnlockFromISR();
 #else
         ecu_ENG_Ign_OFF();

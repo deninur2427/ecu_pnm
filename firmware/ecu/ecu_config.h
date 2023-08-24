@@ -25,7 +25,7 @@
   #define ECU_USE_SHELL   TRUE
   #define ECU_USE_ICU     TRUE
   #define ECU_USE_ADC     TRUE
-  #define ECU_USE_GPT     TRUE
+  #define ECU_USE_GPT     FALSE
 #endif
 
 #endif
