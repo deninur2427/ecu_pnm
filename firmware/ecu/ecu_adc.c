@@ -64,8 +64,8 @@ static const ADCConversionGroup adcgrpcfg = {
     /* HW Dependent Part */
     ADC_CFGR1_CONT | ADC_CFGR1_RES_12BIT,             /* CFGR1 */
     ADC_TR(0, 0),                                     /* TR */
-    ADC_SMPR_SMP_239P5,                               /* SMPR */
-    ADC_CHSELR_CHSEL0                                 /* CHSELR */
+    ADC_SMPR_SMP_1P5,                                 /* SMPR */
+    ADC_CHSELR_CHSEL1                                 /* CHSELR */
 #endif
 };
 
@@ -79,7 +79,14 @@ static THD_FUNCTION(adcThread, arg) {
 }
 
 void ecu_ADC_Init(void){
-    palSetPadMode(GPIOA, ADC_TPS_PIN, PAL_MODE_INPUT_ANALOG);
+#ifdef F103RBNUCLEO
+    palSetPadMode(GPIOA, 0, PAL_MODE_INPUT_ANALOG);
+#endif
+
+#ifdef F051R8NUCLEO
+    palSetPadMode(GPIOA, 1, PAL_MODE_INPUT_ANALOG);
+#endif
+
     adcStart(&ADCD1, NULL);
     chThdCreateStatic(wa_adcThread, sizeof(wa_adcThread), NORMALPRIO, adcThread, NULL);
 }

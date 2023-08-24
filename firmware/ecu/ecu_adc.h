@@ -10,11 +10,6 @@
 #define _ECU_ADC_H_
 
 /**
- * @brief ADC TPS Input Pin
- */
-#define ADC_TPS_PIN             0
-
-/**
  * @brief ADC Channels
  * @details Throttle Position Sensor (TPS)
  */
