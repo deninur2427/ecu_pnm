@@ -5,6 +5,7 @@ int valTPS = 0;
 int limTPS[2]={5,3050};
 
 int valRPM = 0;
+int valCrank = 0;
 
 int limInj[2]={7,200};
 
@@ -201,11 +202,12 @@ void ecuView::serialDataParsing(QString strData, int modeData){
     switch (modeData) {
 
     case SERIAL_MODE_INFO: {
-        if(dataVals.count()<2) break;
+        if(dataVals.count()<3) break;
 
         int adcTPS = dataVals[0].toInt();
         valTPS = (adcTPS - limTPS[0]) * 100 / (limTPS[1] - limTPS[0]);
         valRPM = dataVals[1].toInt();
+        valCrank = dataVals[2].toInt();
     }
 
     default:

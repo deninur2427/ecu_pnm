@@ -10,6 +10,7 @@
 
 extern adcsample_t adc_tps_val;
 extern icucnt_t rpm;
+extern uint8_t toothcount;
 
 thread_t *shelltp = NULL;
 
@@ -26,7 +27,7 @@ static void cmd_basic(BaseSequentialStream *chp, int argc, char *argv[]){
     // testing purpose
     //rpm = adc_tps_val / 100;
 
-    if(argc==0) chprintf(chp,"%i,%i\n",adc_tps_val,rpm);
+    if(argc==0) chprintf(chp,"%i,%i,%i\n",adc_tps_val,rpm,toothcount);
     return;
 }
 
