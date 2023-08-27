@@ -191,7 +191,12 @@ void ecu_ENG_Overflow(void){
     misstooth = 0;
 
     ecu_ENG_Inj_OFF();
+
+#if ECU_COIL_TEST
+    // coil of on separate thread
+#else
     ecu_ENG_Ign_OFF();
+#endif
 }
 
 void ecu_ENG_DataSend(void){

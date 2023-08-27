@@ -17,7 +17,7 @@ thread_t *shelltp = NULL;
 static void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]){
     (void) argv;
 
-    if(argc==0) chprintf(chp, "Serial Interface Working \r\n");
+    if(argc==0) chprintf(chp, "Serial Interface Working\r\n");
     return;
 }
 

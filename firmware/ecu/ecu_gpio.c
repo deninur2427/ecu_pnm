@@ -15,7 +15,7 @@ static THD_FUNCTION(ledTestThread, arg) {
     (void)arg;
     palSetPad(GPIOA, CKP_LED);
     while (TRUE) {
-        palTogglePad(GPIOA, CKP_LED);
+        NO_CKP();
         chThdSleepMilliseconds(250);
     }
 }

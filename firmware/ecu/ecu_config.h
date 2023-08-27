@@ -14,11 +14,12 @@
 
 #define assert_param(expr) ((void)0)
 
-#define LEDSHELL_TEST     TRUE
+#define LEDSHELL_TEST   FALSE
+
+#define ECU_USE_GPIO    TRUE
+#define ECU_USE_SHELL   TRUE
 
 #if LEDSHELL_TEST
-  #define ECU_USE_GPIO    TRUE
-  #define ECU_USE_SHELL   TRUE
   #define ECU_COIL_TEST   TRUE
 
   #define ECU_USE_MEM     FALSE
@@ -27,9 +28,8 @@
   #define ECU_USE_GPT     FALSE
 #else
   #define ECU_COIL_TEST   FALSE
+
   #define ECU_USE_MEM     TRUE
-  #define ECU_USE_GPIO    TRUE
-  #define ECU_USE_SHELL   TRUE
   #define ECU_USE_ICU     TRUE
   #define ECU_USE_ADC     TRUE
   #define ECU_USE_GPT     FALSE
