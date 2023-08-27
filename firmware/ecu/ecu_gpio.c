@@ -15,9 +15,24 @@ static THD_FUNCTION(ledTestThread, arg) {
     (void)arg;
     palSetPad(GPIOA, CKP_LED);
     while (TRUE) {
-	palTogglePad(GPIOA, CKP_LED);
+        palTogglePad(GPIOA, CKP_LED);
         chThdSleepMilliseconds(250);
     }
+}
+#endif
+
+#if ECU_COIL_TEST
+static THD_WORKING_AREA(wa_coilTestThread, 128);
+static THD_FUNCTION(coilTestThread, arg) {
+  (void)arg;
+
+  while (TRUE) {
+      ecu_ENG_Ign_ON();
+      chThdSleepMicroseconds(500);
+      ecu_ENG_Ign_OFF();
+
+      chThdSleepMilliseconds(100);
+  }
 }
 #endif
 
@@ -37,6 +52,10 @@ void ecu_GPIO_Init(void){
 
 #if LEDSHELL_TEST
 	chThdCreateStatic(wa_ledTestThread, sizeof(wa_ledTestThread), NORMALPRIO, ledTestThread, NULL);
+#endif
+
+#if ECU_COIL_TEST
+    chThdCreateStatic(wa_coilTestThread, sizeof(wa_coilTestThread), NORMALPRIO, coilTestThread, NULL);
 #endif
 }
 
