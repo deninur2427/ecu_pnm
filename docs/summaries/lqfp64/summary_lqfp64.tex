@@ -33,17 +33,17 @@
 
 \begin{document}
 	\pagestyle{fancy}
-	
+
 	\lhead{Achmadi}
 	\chead{\today}
 	\rhead{Specification Document}
-	
+
 	\onecolumn
 	\begin{figure}
-		
+
 	\end{figure}\begin{minipage}{0.47\textwidth}
 		\centering
-		
+
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.47\textwidth}
@@ -53,18 +53,18 @@
 
 	\begin{figure}
 		\begin{minipage}{0.47\textwidth}
-			
+
 			\section{Overview}
 			\begin{itemize}
 				\item Minimal and Flexible Engine Control Unit
 				\item Reading TPS and RPM with calibration capability
-				\item Control Injection and Ignition 
+				\item Control Injection and Ignition
 				\item Serial Data Interface in Real-time
 				\item Designed to easy of use for general Injection engines
 				\item Build as single circuit board with minimal setup
 				\item Based on STM32Fx series that popular in automotive industries
 			\end{itemize}
-			
+
 		\end{minipage}
 		\hfill
 		\begin{minipage}{0.47\textwidth}
@@ -74,16 +74,16 @@
 	\end{figure}
 
 	\raggedright
-	
+
 	\section{Repository URLs}
-	
+
 	\begin{itemize}
 		\item PCB Design: \url{https://github.com/deninur2427/ecu_pnm/tree/main/circuits/ecupnm_f051r8}
-		
+
 		\item Firmware: \url{https://github.com/deninur2427/ecu_pnm/tree/main/firmware/}
-		
+
 		\item Interface: \url{https://github.com/deninur2427/ecu_pnm/tree/main/interface/ecu_view/}
-		
+
 		\item Overall Repository: \url{https://github.com/deninur2427/ecu_pnm/}
 	\end{itemize}
 
@@ -102,12 +102,12 @@
 		PULSER Input & & Any pulsed signals \\
 		\bottomrule
 	\end{tabular}
-	
+
 	\raggedright
-	
+
 	\newpage
 	\section{Unit Preview}
-	
+
 	\begin{figure}[h]
 		\centering
 		\begin{subfigure}{0.45\textwidth}
@@ -121,7 +121,7 @@
 	\end{figure}
 
 	\section{Electrical Wiring}
-	
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=\textwidth]{images/wiring_lqfp64.png}
@@ -129,17 +129,50 @@
 	\end{figure}
 
 	\section{Schematic Design}
-	
+
 	\includepdf[pages=-,angle=-90]{images/ecupnm_sch.pdf}
 
 	\newpage
+	\newpage
+	\section{Firmware Summary}
+
+	In Summary:
+	\begin{itemize}
+		\item Library Framework: ChibiOS/RT
+
+		\item Running Mode: Real-Time Operating System
+
+		\item Compiler target: GCC ARM with Newlib for STM32 LQFP64 chip-series.
+	\end{itemize}
+
+	Some code snippet from \href[]{https://github.com/deninur2427/ecu_pnm/blob/main/firmware/ecu/main.c}{main.c}:
+
+	\begin{minted}[frame=lines,framesep=2mm,fontsize=\normalsize,bgcolor=LightGray]{c}
+int main(void) {
+	halInit();
+	chSysInit();
+
+	ecu_MEM_Init();
+	ecu_GPIO_Init();
+	ecu_SHELL_Init();
+	ecu_ICU_Init();
+	ecu_ADC_Init();
+	ecu_GPT_Init();
+
+	while (true) {
+		ecu_SHELL_Loop();
+		chThdSleepMilliseconds(500);
+	}
+}
+	\end{minted}
+
 	\section{Development Progress and Notes}
-	
+
 	List of Development Notes:
 	\begin{itemize}
 		\item \href{https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_31072023.md}{July 31\textsuperscript{st}, 2023}
-		
+
 		\item \href{https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_24082023.md}{August 24\textsuperscript{th}, 2023}
 	\end{itemize}
-	
+
 \end{document}
