@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export STLINK='st-flash --connect-under-reset --reset'
+
+sudo $STLINK erase
+sudo $STLINK --format ihex write ./build/ecu.hex
