@@ -58,3 +58,4 @@ Custom Engine Control Unit for LPG
 
 - Tanggal 31 Juli 2023: [Catatan](https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_31072023.md)
 - Tanggal 24 Agustus 2023: [Catatan](https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_24082023.md)
+- Tanggal 19 September 2023: [Catatan](https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_19092023.md)
