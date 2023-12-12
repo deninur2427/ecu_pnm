@@ -39,36 +39,7 @@
   <style
      id="style8">&#10;.measure-arrow&#10;{&#10;}&#10;.measure-label&#10;{&#10;&#10;}&#10;.measure-line&#10;{&#10;}</style>
   <defs
-     id="defs1">
-    <marker
-       id="Arrow2Sstart"
-       inkscape:isstock="true"
-       inkscape:stockid="Arrow2Sstart"
-       orient="auto"
-       refX="0"
-       refY="0"
-       style="overflow:visible">
-      <path
-         d="M 8.72,4.03 -2.21,0.02 8.72,-4 c -1.75,2.37 -1.74,5.62 0,8.03 z"
-         id="Arrow2SstartPath"
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
-    </marker>
-    <marker
-       id="Arrow2Send"
-       inkscape:isstock="true"
-       inkscape:stockid="Arrow2Send"
-       orient="auto"
-       refX="0"
-       refY="0"
-       style="overflow:visible">
-      <path
-         d="M 8.72,4.03 -2.21,0.02 8.72,-4 c -1.75,2.37 -1.74,5.62 0,8.03 z"
-         id="Arrow2SendPath"
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
-    </marker>
-  </defs>
+     id="defs1" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
