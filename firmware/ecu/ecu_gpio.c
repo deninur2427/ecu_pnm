@@ -9,18 +9,6 @@
 #include "ecu_config.h"
 #include "ecu_includes.h"
 
-#if LEDSHELL_TEST
-static THD_WORKING_AREA(wa_ledTestThread, 128);
-static THD_FUNCTION(ledTestThread, arg) {
-    (void)arg;
-    palSetPad(GPIOA, CKP_LED);
-    while (TRUE) {
-        NO_CKP();
-        chThdSleepMilliseconds(250);
-    }
-}
-#endif
-
 #if ECU_COIL_TEST
 static uint16_t coil_counter;
 
@@ -54,10 +42,6 @@ void ecu_GPIO_Init(void){
     palSetPadMode(OUT_PORT, OUT_IGN, PAL_MODE_OUTPUT_PUSHPULL);
 
     palSetPad(GPIOA, CKP_LED);
-
-#if LEDSHELL_TEST
-	chThdCreateStatic(wa_ledTestThread, sizeof(wa_ledTestThread), NORMALPRIO, ledTestThread, NULL);
-#endif
 
 #if ECU_COIL_TEST
     chThdCreateStatic(wa_coilTestThread, sizeof(wa_coilTestThread), NORMALPRIO, coilTestThread, NULL);

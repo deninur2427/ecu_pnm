@@ -14,25 +14,26 @@
 
 #define assert_param(expr) ((void)0)
 
-#define LEDSHELL_TEST   TRUE
+#define ECU_SIMULATE    TRUE
 
 #define ECU_USE_GPIO    TRUE
 #define ECU_USE_SHELL   TRUE
+#define ECU_USE_ICU     TRUE
 #define ECU_OVF_DELAY   100
-#define ECU_COIL_DELAY  chThdSleepMicroseconds(500)
 
-#if LEDSHELL_TEST
-  #define ECU_COIL_TEST   TRUE
+#define ECU_SIM_DELAY   chThdSleepMilliseconds(1)   // fastest RPM it can't be
+#define ECU_COIL_DELAY  chThdSleepMicroseconds(500) // coil charging max delay without EMF
 
-  #define ECU_USE_MEM     FALSE
-  #define ECU_USE_ICU     FALSE
-  #define ECU_USE_ADC     FALSE
+#if ECU_SIMULATE
+  #define ECU_COIL_TEST   FALSE // Can't be true in simulation
+
+  #define ECU_USE_MEM     TRUE
+  #define ECU_USE_ADC     TRUE
   #define ECU_USE_GPT     FALSE
 #else
   #define ECU_COIL_TEST   FALSE
 
   #define ECU_USE_MEM     TRUE
-  #define ECU_USE_ICU     TRUE
   #define ECU_USE_ADC     TRUE
   #define ECU_USE_GPT     FALSE
 #endif

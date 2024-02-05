@@ -77,7 +77,7 @@ void ecu_ENG_ToothCalc(void){
     // if period percent approximately 50% (half than previous)
     // reset the toothcount
     // or else increment the toothcount
-    if((misstooth>40) && (misstooth<50)){
+    if((misstooth>40) && (misstooth<60)){
         toothcount = 0;
     }
     else{

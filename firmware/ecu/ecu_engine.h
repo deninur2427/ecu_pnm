@@ -20,7 +20,7 @@
 #define ENGINE_TOOTH_INTAKE_OPEN    11
 #define ENGINE_TOOTH_INTAKE_CLOSE   2
 #define ENGINE_TOOTH_COIL_ON        19
-#define ENGINE_TOOTH_COIL_OFF       20 // coil can't be charged too long
+#define ENGINE_TOOTH_COIL_OFF       20 // coil must be charged only in one tooth duration
 #define ENGINE_TOOTH_EXHAUST_OPEN   18
 #define ENGINE_TOOTH_EXHAUST_CLOSE  6
 
