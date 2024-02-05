@@ -15,12 +15,12 @@
 #define ENGINE_DATA_MEMORY          TRUE
 
 // Engine Tooth Numbering
-#define ENGINE_TOOTH_TOP            8
-#define ENGINE_TOOTH_BOTTOM         21
+#define ENGINE_TOOTH_TOP            23
+#define ENGINE_TOOTH_BOTTOM         9
 #define ENGINE_TOOTH_INTAKE_OPEN    11
 #define ENGINE_TOOTH_INTAKE_CLOSE   2
-#define ENGINE_TOOTH_COIL_ON        6
-#define ENGINE_TOOTH_COIL_OFF       8
+#define ENGINE_TOOTH_COIL_ON        19
+#define ENGINE_TOOTH_COIL_OFF       20 // coil can't be charged too long
 #define ENGINE_TOOTH_EXHAUST_OPEN   18
 #define ENGINE_TOOTH_EXHAUST_CLOSE  6
 

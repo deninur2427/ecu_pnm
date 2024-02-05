@@ -162,7 +162,11 @@ void ecu_ENG_InjIgnControl(void){
     // Ignition Control
 
     if(toothcount==ENGINE_TOOTH_COIL_ON){
+#if ECU_COIL_TEST
+        // coil on separate thread
+#else
         ecu_ENG_Ign_ON();
+#endif
     }
 
     if(toothcount==ENGINE_TOOTH_COIL_OFF){
@@ -193,7 +197,7 @@ void ecu_ENG_Overflow(void){
     ecu_ENG_Inj_OFF();
 
 #if ECU_COIL_TEST
-    // coil of on separate thread
+    // coil off on separate thread
 #else
     ecu_ENG_Ign_OFF();
 #endif

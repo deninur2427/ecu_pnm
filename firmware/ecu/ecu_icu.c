@@ -25,7 +25,7 @@ static THD_FUNCTION(ovfThread, arg) {
             cnt_ovf=0;
         }
 
-        chThdSleepMilliseconds(100);
+        chThdSleepMilliseconds(ECU_OVF_DELAY);
     }
 }
 

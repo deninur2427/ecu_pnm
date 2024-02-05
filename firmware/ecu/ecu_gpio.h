@@ -36,9 +36,11 @@
  */
 #define NO_CKP()    palTogglePad(GPIOA, CKP_LED)
 
-// Engine Output declaration functions
+// Injector Output declaration functions
 #define ecu_ENG_Inj_ON()    palSetPad(OUT_PORT,OUT_INJ)
 #define ecu_ENG_Inj_OFF()   palClearPad(OUT_PORT,OUT_INJ)
+
+// Ignition Output declaration functions
 #define ecu_ENG_Ign_ON()    palSetPad(OUT_PORT,OUT_IGN)
 #define ecu_ENG_Ign_OFF()   palClearPad(OUT_PORT,OUT_IGN)
 

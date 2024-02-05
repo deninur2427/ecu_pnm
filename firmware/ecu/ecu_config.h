@@ -14,10 +14,12 @@
 
 #define assert_param(expr) ((void)0)
 
-#define LEDSHELL_TEST   FALSE
+#define LEDSHELL_TEST   TRUE
 
 #define ECU_USE_GPIO    TRUE
 #define ECU_USE_SHELL   TRUE
+#define ECU_OVF_DELAY   100
+#define ECU_COIL_DELAY  chThdSleepMicroseconds(500)
 
 #if LEDSHELL_TEST
   #define ECU_COIL_TEST   TRUE

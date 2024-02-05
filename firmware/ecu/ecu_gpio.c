@@ -22,16 +22,21 @@ static THD_FUNCTION(ledTestThread, arg) {
 #endif
 
 #if ECU_COIL_TEST
+static uint16_t coil_counter;
+
 static THD_WORKING_AREA(wa_coilTestThread, 128);
 static THD_FUNCTION(coilTestThread, arg) {
   (void)arg;
 
   while (TRUE) {
+      coil_counter++;
+
       ecu_ENG_Ign_ON();
-      chThdSleepMicroseconds(500);
+      ECU_COIL_DELAY; // coil EMF may freeze the chip
       ecu_ENG_Ign_OFF();
 
-      chThdSleepMilliseconds(100);
+      chThdSleepMilliseconds(250);
+      chprintf((BaseSequentialStream*)&SD1,"Coil sparked for %i times\r\n",coil_counter);
   }
 }
 #endif
