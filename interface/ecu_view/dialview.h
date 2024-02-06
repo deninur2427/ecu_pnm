@@ -6,6 +6,7 @@
 #include <QLayout>
 
 #include "dialmeter.h"
+#include "clockmeter.h"
 
 #define sizedial 250
 
@@ -24,6 +25,7 @@ private:
 
     dialMeter* d_tps;
     dialMeter* d_rpm;
+    clockMeter* d_rot;
 
     QTimer* tmrUpdateValue;
 

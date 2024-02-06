@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     dialmeter.cpp \
+    clockmeter.cpp \
     dialview.cpp \
     main.cpp \
     ecuview.cpp
 
 HEADERS += \
     dialmeter.h \
+    clockmeter.h \
     dialview.h \
     ecuview.h
 

@@ -2,6 +2,7 @@
 
 extern int valTPS;
 extern int valRPM;
+extern int valCrank;
 
 dialView::dialView(QWidget *parent ):
     QFrame( parent )
@@ -15,6 +16,9 @@ dialView::dialView(QWidget *parent ):
 
     QwtDial *dial_rpm = createDial(2);
     layout->addWidget( dial_rpm, 0, 1 );
+
+    QwtDial *dial_rot = createDial(3);
+    layout->addWidget( dial_rot, 0, 2 );
 
     for (int i = 0; i < layout->columnCount(); i++ ) layout->setColumnStretch( i, 1 );
     for (int i = 0; i < layout->rowCount(); i++ ) layout->setRowStretch( i, 1 );
@@ -37,20 +41,40 @@ QwtDial* dialView::createDial(int pos){
         d_tps->setLabel("TPS");
         d_tps->setFixedHeight(sizedial);
         d_tps->setFixedWidth(sizedial);
+        d_tps->clearFocus();
+        d_tps->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         dial = d_tps;
         break;
     }
     case 2: {
         d_rpm = new dialMeter(this);
-        d_rpm->setScaleStepSize( 200.0 );
+        d_rpm->setScaleStepSize( 500.0 );
         d_rpm->setScale( 0.0, 4000.0 );
         d_rpm->scaleDraw()->setPenWidthF(2);
         d_rpm->setLabel("RPM");
         d_rpm->setFixedHeight(sizedial);
         d_rpm->setFixedWidth(sizedial);
+        d_rpm->clearFocus();
+        d_rpm->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         dial = d_rpm;
+        break;
+    }
+    case 3: {
+        d_rot = new clockMeter(this);
+        d_rot->setScaleStepSize( 1.0 );
+        d_rot->setScale( 0.0, 24.0 );
+        d_rot->scaleDraw()->setPenWidthF(2);
+        d_rot->setLabel("Rotation");
+        d_rot->setFixedHeight(sizedial);
+        d_rot->setFixedWidth(sizedial);
+        d_rot->clearFocus();
+        d_rot->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+        d_rot->setOrigin(285); // 270+15 following degree of cranktooth
+
+        dial = d_rot;
         break;
     }
 
@@ -69,4 +93,5 @@ QwtDial* dialView::createDial(int pos){
 void dialView::updateValue(){
     d_tps->setValue(valTPS);
     d_rpm->setValue(valRPM);
+    d_rot->setValue(valCrank);
 }

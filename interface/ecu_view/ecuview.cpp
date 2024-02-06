@@ -181,7 +181,7 @@ void ecuView::on_btnMonitoring_clicked()
 
     if(strBtnName=="Start Monitoring"){
         if(ecuPort->isOpen()) {
-            tmrMonitor->start(100);
+            tmrMonitor->start(50); // can't be faster
             ui->btnMonitoring->setText("Stop Monitoring");
             ui->statusbar->showMessage("Engine Monitor Dial Started");
         }

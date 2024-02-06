@@ -1,5 +1,5 @@
-#ifndef DIALMETER_H
-#define DIALMETER_H
+#ifndef CLOCKMETER_H
+#define CLOCKMETER_H
 
 #include <QString>
 
@@ -8,17 +8,18 @@
 #include <qwt_dial_needle.h>
 #include <qwt_round_scale_draw.h>
 
-class dialMeter: public QwtDial
+class clockMeter: public QwtDial
 {
-public:
-    dialMeter(QWidget *parent = NULL);
-    void setLabel(const QString &);
-
 protected:
     virtual void drawScaleContents( QPainter *painter,const QPointF &center, double radius ) const;
 
 private:
     QString d_label;
+
+public:
+    clockMeter(QWidget *parent=NULL);
+    void setLabel(const QString &);
 };
 
-#endif // DIALMETER_H
+#endif /* CLOCKMETER_H */
+
