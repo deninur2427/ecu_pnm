@@ -19,24 +19,14 @@
 #define ECU_USE_GPIO    TRUE
 #define ECU_USE_SHELL   TRUE
 #define ECU_USE_ICU     TRUE
+#define ECU_USE_MEM     TRUE
+#define ECU_USE_ADC     TRUE
+#define ECU_USE_GPT     FALSE
+
 #define ECU_OVF_DELAY   100
 
-#define ECU_SIM_DELAY   chThdSleepMilliseconds(1)   // fastest RPM it can't be
+#define ECU_SIM_DELAY   chThdSleepMilliseconds(5)  // fastest RPM it might can be
 #define ECU_COIL_DELAY  chThdSleepMicroseconds(500) // coil charging max delay without EMF
-
-#if ECU_SIMULATE
-  #define ECU_COIL_TEST   FALSE // Can't be true in simulation
-
-  #define ECU_USE_MEM     TRUE
-  #define ECU_USE_ADC     TRUE
-  #define ECU_USE_GPT     FALSE
-#else
-  #define ECU_COIL_TEST   FALSE
-
-  #define ECU_USE_MEM     TRUE
-  #define ECU_USE_ADC     TRUE
-  #define ECU_USE_GPT     FALSE
-#endif
 
 #endif
 

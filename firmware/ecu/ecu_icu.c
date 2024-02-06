@@ -20,16 +20,12 @@ static THD_WORKING_AREA(wa_simThread, 128);
 static THD_FUNCTION(simThread, arg){
     (void) arg;
 
-
     while (TRUE) {
         last_period = 100;
-        cnt_ovf = 0;
 
         ecu_ENG_ToothCalc();
         ecu_ENG_InjIgnCalc();
         ecu_ENG_InjIgnControl();
-
-        palSetPad(GPIOA,CKP_LED);
 
         ECU_SIM_DELAY;
     }

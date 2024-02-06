@@ -72,7 +72,7 @@ ecuView::ecuView(QWidget *parent)
     tmrMonitor = new QTimer(this);
     tmrMonitor->stop();
 
-    ecuPort->setBaudRate(QSerialPort::Baud38400);
+    ecuPort->setBaudRate(QSerialPort::Baud9600);
     ecuPort->setDataBits(QSerialPort::Data8);
     ecuPort->setStopBits(QSerialPort::OneStop);
     ecuPort->setFlowControl(QSerialPort::NoFlowControl);
