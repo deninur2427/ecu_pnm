@@ -72,7 +72,8 @@ QwtDial* dialView::createDial(int pos){
         d_rot->clearFocus();
         d_rot->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-        d_rot->setOrigin(285); // 270+15 following degree of cranktooth
+        //d_rot->setOrigin(285); // 270+15 following degree of cranktooth
+        d_rot->setOrigin(90);
 
         dial = d_rot;
         break;
